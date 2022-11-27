@@ -151,10 +151,10 @@ namespace Photon.Pun.Demo.PunBasics
 			return PhotonNetwork.LeaveRoom();
 		}
 
-		public void QuitApplication()
-		{
-			Application.Quit();
-		}
+		//public void QuitApplication()
+		//{
+		//	Application.Quit();
+		//}
 
 		#endregion
 
