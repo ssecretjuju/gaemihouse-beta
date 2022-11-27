@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: ae7c2fa0ebfa4d444b9a1f879aa0fa1a
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Han Santteut Dotum
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 02265315ed4eb154ca842d4b80e33baa, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
