@@ -100,9 +100,7 @@ public class PlayerMove : MonoBehaviourPun, IPunObservable
         //내것이 아니라면
         else
         {
-            //Lerp를 이용해서 목적지, 목적방향까지 이동 및 회전
-            transform.position = Vector3.Lerp(transform.position, receivePos, lerpSpeed * Time.deltaTime);
-            transform.rotation = Quaternion.Lerp(transform.rotation, receiveRot, lerpSpeed * Time.deltaTime);
+            return;
         }
     }
 

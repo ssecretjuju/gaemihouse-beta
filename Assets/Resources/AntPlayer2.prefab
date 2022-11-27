@@ -27949,9 +27949,9 @@ GameObject:
   - component: {fileID: 6636056912409685276}
   - component: {fileID: 6636056912409685278}
   - component: {fileID: -6564097418627145630}
-  - component: {fileID: -911963803653384695}
   - component: {fileID: -3657791935059642391}
   - component: {fileID: 972718046881294098}
+  - component: {fileID: 3503989309753481194}
   m_Layer: 0
   m_Name: AntPlayer2
   m_TagString: Player
@@ -27984,7 +27984,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6636056912409685273}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 033da13455bdec54db5da3ccd6935a91, type: 3}
   m_Name: 
@@ -28056,19 +28056,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imoticon: []
   imoticonPrefab: {fileID: 0}
---- !u!114 &-911963803653384695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6636056912409685273}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cd5bf311fea0f74da43837fde2386ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canvas: {fileID: 1162091312035326925}
 --- !u!114 &-3657791935059642391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28088,6 +28075,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
+  - {fileID: 6636056912409685277}
   - {fileID: 972718046881294098}
   - {fileID: 8264567976279449857}
   sceneViewId: 0
@@ -28109,6 +28097,21 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &3503989309753481194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6636056912409685273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69cf41d9cb4da594b8f4d3d88ba9c5f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  jumpPower: 5
+  lerpSpeed: 100
 --- !u!1 &6636056912447044551
 GameObject:
   m_ObjectHideFlags: 0

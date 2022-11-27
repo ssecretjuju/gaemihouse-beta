@@ -13,7 +13,7 @@ using Photon.Realtime;
 
 //단, CharacterController를 사용
 
-public class AntMove : MonoBehaviourPunCallbacks
+public class AntMove : MonoBehaviourPunCallbacks, IPunObservable
 {
     public float speed, rotationSpeed;
     private CharacterController characterController;
@@ -92,6 +92,27 @@ public class AntMove : MonoBehaviourPunCallbacks
         }
     }
 
+    //도착 위치
+    Vector3 receivePos;
+    //회전되야 하는 값
+    Quaternion receiveRot;
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        //데이터 보내기
+        if (stream.IsWriting) // isMine == true
+        {
+            //position, rotation
+            stream.SendNext(transform.rotation);
+            stream.SendNext(transform.position);
+        }
+        //데이터 받기
+        else if (stream.IsReading) // ismMine == false
+        {
+            receiveRot = (Quaternion)stream.ReceiveNext();
+            receivePos = (Vector3)stream.ReceiveNext();
+        }
+    }
 
 }
 
