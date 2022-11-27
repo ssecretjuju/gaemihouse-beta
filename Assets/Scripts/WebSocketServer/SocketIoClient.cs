@@ -17,6 +17,7 @@ public class SocketIoClient : MonoBehaviourPun
     //ScrollView의 Content transform
     public RectTransform trContent;
     
+    public string ChatNickname;
     
     //public RectTransform rtScrollView;
     float prevContentH;
@@ -26,6 +27,7 @@ public class SocketIoClient : MonoBehaviourPun
     void Start()
     {
         ChatNickname = LoginManager.Instance.playerData.memberNickname;
+        //print("instance.nickname : " + ChatNickname);
 
         ws = new WebSocket("ws://3.34.133.115:8001");
         //서버에 연결! 
@@ -64,7 +66,6 @@ public class SocketIoClient : MonoBehaviourPun
         t.text = inputChat.text;
     }
 
-    public string ChatNickname;
 
     void Update()
     {
@@ -76,6 +77,10 @@ public class SocketIoClient : MonoBehaviourPun
         if (Input.GetKeyDown(KeyCode.Return))
         {
             Console.Write("채팅 입력 > ");
+
+            print("inputChat : " + inputChat);
+            print(inputChat.text);
+
             var message = inputChat.text;
             // if (message != null)
             // {
@@ -86,9 +91,10 @@ public class SocketIoClient : MonoBehaviourPun
             // }
     
             //send : 입력 보내는 것 
-            //s.Send(PhotonNetwork.NickName + "%" + message);
-            //ws.Send( ChatNickname + "%" + message);
-            ws.Send( ChatNickname + "%" + message);
+            
+           ws.Send( ChatNickname + "%" + message);
+           print("message : " + message);
+            //ws.Send(message);
 
             inputChat.text = "";
             

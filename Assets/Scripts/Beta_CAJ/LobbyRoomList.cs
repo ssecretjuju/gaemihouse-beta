@@ -292,6 +292,8 @@ public class LobbyRoomList : MonoBehaviourPunCallbacks
                 {
                     return;
                 }
+
+                //왼쪽 클릭 : 방 참가 인원 + 키워드 2개 보여주기 ! 
             }
         }
     }

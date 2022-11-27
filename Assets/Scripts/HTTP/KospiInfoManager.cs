@@ -34,8 +34,8 @@ public class KospiInfoManager : MonoBehaviour
 
     private void Awake()
     {
-        //처음 : 비 파티클 실행 x
-        RainGameObject.SetActive(false);
+        ////처음 : 비 파티클 실행 x
+        //RainGameObject.SetActive(false);
 
         if (Instance != null)
         {
