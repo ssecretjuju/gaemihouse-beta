@@ -16,7 +16,7 @@ public class RoomboardInsertInfo
     public string roomBoardTitle;
     public string roomBoardContent;
     public DateTime roomBoardRegistDate;
-    public int roomBoardMemberCode;
+    public int memberCode;
     public int shareholderRoomCode;
     public int likeCount;
 }
@@ -33,6 +33,7 @@ public class ResponseRoomboard
 
 public class SubboardManager : MonoBehaviour
 {
+    public static SubboardManager Instance;
 
     public GameObject SubwriteWindow;
     public GameObject confirmWindow;
@@ -113,11 +114,11 @@ public class SubboardManager : MonoBehaviour
         data.roomBoardCode = 0;
         data.roomBoardTitle = title.text;
         data.roomBoardContent = content.text;
-        data.roomBoardMemberCode = LoginManager.Instance.playerData.memberCode;
+        data.memberCode = LoginManager.Instance.playerData.memberCode;
         data.shareholderRoomCode = 0;
         data.likeCount = 0;
 
-    HttpRequester requester = new HttpRequester();
+        HttpRequester requester = new HttpRequester();
         requester.url = "http://secretjujucicd-api-env.eba-iuvr5h2k.ap-northeast-2.elasticbeanstalk.com/roomBoard/insert";
         requester.requestType = RequestType.POST;
 
@@ -147,6 +148,8 @@ public class SubboardManager : MonoBehaviour
         //string countNumber = count.ToString();
 
         //likeCountText.text = countNumber;
+        
+        //서버로 좋아요 누른사람의 멤버 코드를 보낸다?
 
 
     }

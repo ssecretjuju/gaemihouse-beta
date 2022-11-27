@@ -31,7 +31,8 @@ public class PressF : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
+        
     }
 
     // Update is called once per frame
@@ -79,15 +80,18 @@ public class PressF : MonoBehaviour
         HttpManager.instance.SendRequest(requester);
         print("서브보드 조회 완료");
 
-        GameObject Item = Instantiate(Subboard, boardItemParent);
     }
 
     public List<int> subboardinfo;
+    public GameObject confirmWriting;
 
     public void GetRoomBoard(DownloadHandler handler)
     {
+        
         JSONNode node = JSON.Parse(handler.text);
         subboardinfo.Clear();
+        //confirmWriting = SubboardManager.Instance.confirmWindow;
+        confirmWriting = GameObject.Find("SubBoardCanvas").transform.GetChild(0).gameObject;
 
         for (int i = 0; i < node["data"].Count; ++i)
         {
@@ -97,11 +101,34 @@ public class PressF : MonoBehaviour
             print("제목 +" + node["data"][i]["roomBoardTitle"]);
             subboardinfo.Add(node["data"][i]["roomBoardContent"]);
             print("내용 +" + node["data"][i]["roomBoardContent"]);
+            subboardinfo.Add(node["data"][i]["roomBoardRegistDate"]);
+            print("날짜 +" + node["data"][i]["roomBoardRegistDate"]);
+            subboardinfo.Add(node["data"][i]["memberNickname"]);
             subboardinfo.Add(node["data"][i]["likeCount"]);
             print("좋아요 수 +" + node["data"][i]["likeCount"]);
 
+            GameObject Item = Instantiate(Subboard, boardItemParent);
+            SubboardClick subboardClick = Item.GetComponent<SubboardClick>();
+            subboardClick.subContent = node["data"][i]["roomBoardContent"];
+            subboardClick.subLikey = node["data"][i]["likeCount"].ToString();
+            subboardClick.subTitle = node["data"][i]["roomBoardTitle"];
 
+            Item.transform.GetChild(0).GetComponent<InputField>().text = node["data"][i]["roomBoardTitle"];
+            Item.transform.GetChild(1).GetComponent<Text>().text = node["data"][i]["memberNickname"];         
+            Item.transform.GetChild(2).GetComponent<Text>().text = node["data"][i]["roomBoardRegistDate"];   
+            
+
+            //content.text = node["data"][i]["roomBoardContent"];           
+            //confirmTitle.text = node["data"][i]["roomBoardTitle"]; 
+           
+            //SubboardManager.Instance.confirmWindow.transform.GetChild(1).GetComponent<Text>().text = node["data"][i]["roomBoardContent"];
+            //Item.transform.GetChild(2).GetComponent<Text>().text = node["data"][i]["roomBoardRegistDate"];
+            //SubboardManager.Instance.confirmWindow.transform.GetChild(3).GetComponent<Text>().text = node["data"][i]["likeCount"];
+
+            //SubboardClick confirmSet = Item.GetComponent<SubboardClick>();
+            //confirmSet.Set(Item.transform.GetChild(0).GetComponent<InputField>().text, SubboardManager.Instance.confirmWindow.transform.GetChild(1).GetComponent<Text>().text, SubboardManager.Instance.confirmWindow.transform.GetChild(3).GetComponent<Text>().text, confirmWriting);
         }
+
     }
 }
 

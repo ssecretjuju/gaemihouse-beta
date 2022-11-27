@@ -103,7 +103,7 @@ public class RoomListSetting : MonoBehaviourPunCallbacks
         ExitGames.Client.Photon.Hashtable hash = new ExitGames.Client.Photon.Hashtable();
         //hash["desc"] = int.Parse(inputReturn.text);
         //hash["desc"] = float.Parse(inputReturn.text);
-
+        
         hash["room_name"] = inputRoomName.text;
         print("인풋 이름: " + inputRoomName.text);
         print("방이름:" + hash["room_name"]);

@@ -6,6 +6,7 @@ EditorUserSettings:
   serializedVersion: 4
   m_ConfigSettings:
     RecentlyUsedSceneGuid-0:
+<<<<<<< HEAD
       value: 02570d5304055f0b5a5b0a7341730644144f407b7a7e71637c794d61e7b66561
       flags: 0
     RecentlyUsedSceneGuid-1:
@@ -13,27 +14,51 @@ EditorUserSettings:
       flags: 0
     RecentlyUsedSceneGuid-2:
       value: 565452540107590e0f5f542345730c44464f4d797e297433792b4c62e4e3606d
+=======
+      value: 515207570450510c0e570e2144250744434f1a7b757c743379284a6be1e5623a
+      flags: 0
+    RecentlyUsedSceneGuid-1:
+      value: 5157555e53055c035f0b5c2345250844464f1c7b7e2b7f67782b1e62e1b06c6f
+      flags: 0
+    RecentlyUsedSceneGuid-2:
+      value: 5a05025356510a5f5d0d0a7314715c444e1519287f7e22657f2c1b6ab1b9603d
+>>>>>>> origin/LYJ-BETA
       flags: 0
     RecentlyUsedSceneGuid-3:
-      value: 5002565e55075b5a0c58557b46200744104f492f757023322b7f1b32b7b4373c
+      value: 5402005556515d5a5d5c0e2448215a44124e1e797d787060292a1962b3e33268
       flags: 0
     RecentlyUsedSceneGuid-4:
+<<<<<<< HEAD
       value: 5a05025356510a5f5d0d0a7314715c444e1519287f7e22657f2c1b6ab1b9603d
+=======
+      value: 5401005353050d5d5a5b5b7143700a441416197c7e707e607a7a4f6ae7e53539
+>>>>>>> origin/LYJ-BETA
       flags: 0
     RecentlyUsedSceneGuid-5:
       value: 05030552575359090f5f0e71447b5d4417151e7d7d7074662b2c4b36e4b8326e
       flags: 0
     RecentlyUsedSceneGuid-6:
+<<<<<<< HEAD
       value: 5554055555565a035c0d5c7742705944134f4e7c7d717236747a496abbb06c6d
       flags: 0
     RecentlyUsedSceneGuid-7:
       value: 515207570450510c0e570e2144250744434f1a7b757c743379284a6be1e5623a
+=======
+      value: 0200515000005a0c5a5d587114775b44454e1c79782a7569742f4e65e1b2636d
+      flags: 0
+    RecentlyUsedSceneGuid-7:
+      value: 06085256040c580f0f595d23417a08444f4f4d2b292923337c711f66e7e5366a
+>>>>>>> origin/LYJ-BETA
       flags: 0
     RecentlyUsedSceneGuid-8:
-      value: 50000650045658085a57597b14255944144e4d787a2920342f7a1937e4b03568
+      value: 0752550053540a5d590c5f76147607441715492c2f7d7064787f4530b5e46761
       flags: 0
     RecentlyUsedSceneGuid-9:
+<<<<<<< HEAD
       value: 0752550053540a5d590c5f76147607441715492c2f7d7064787f4530b5e46761
+=======
+      value: 50000650045658085a57597b14255944144e4d787a2920342f7a1937e4b03568
+>>>>>>> origin/LYJ-BETA
       flags: 0
     vcSharedLogLevel:
       value: 0d5e400f0650

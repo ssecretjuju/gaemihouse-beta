@@ -145,10 +145,7 @@ public class BoardUIManager : MonoBehaviour
 
     //x버튼 누르면 글 게시판이 닫힌다
 
-    public void OnEscBtn()
-    {
-        boardCanvas.SetActive(false);
-    }
+
     void Start()
     {
         

@@ -15,7 +15,6 @@ public class RoomData
     public int roomLimitedNumber;
     public int roomRegistedNumber;
     public int roomYield;
-    
 }
 
 public class ListenData

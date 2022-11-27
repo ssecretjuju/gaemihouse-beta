@@ -50,6 +50,13 @@ public class AntCustom : MonoBehaviour
             onGetCustomData();
         }
 
+        if (SceneManager.GetActiveScene().name == "LYJ_RoomScene")
+        {
+            //CustomCanvas.SetActive(false);
+            print("·ë¾À");
+            onGetCustomData();
+        }
+
     }
 
     // Update is called once per frame
