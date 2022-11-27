@@ -2089,7 +2089,7 @@ GameObject:
   m_Component:
   - component: {fileID: 241002978786230710}
   - component: {fileID: 6176715726039063500}
-  - component: {fileID: 8264567976279449857}
+  - component: {fileID: 5392229343278377436}
   m_Layer: 0
   m_Name: Ant2
   m_TagString: Untagged
@@ -2146,7 +2146,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8264567976279449857
+--- !u!114 &5392229343278377436
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11884,7 +11884,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2525133714575639841
 Transform:
   m_ObjectHideFlags: 0
@@ -11892,14 +11892,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2900532635813322651}
-  m_LocalRotation: {x: -0.47993672, y: 0.51055276, z: -0.5110133, w: 0.49785742}
-  m_LocalPosition: {x: -0.13681579, y: 6.866667, z: 1.1914258}
+  m_LocalRotation: {x: -0.48975256, y: 0.5008059, z: -0.5016138, w: 0.50766087}
+  m_LocalPosition: {x: -0.09, y: 6.87, z: 1.06}
   m_LocalScale: {x: 27.988262, y: 24.384043, z: 26.749365}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 241002978786230710}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 2.517, y: -113.04, z: -89.022}
+  m_LocalEulerAnglesHint: {x: 0.296, y: -271.07, z: -89.023}
 --- !u!33 &1487533856795642500
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -26442,7 +26442,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a3b9ccb2b669dea4bbb5bd5c659e9e07, type: 2}
+  - {fileID: 2100000, guid: d2db9da58d9fb7845bc11951844a34a7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -27215,7 +27215,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a3b9ccb2b669dea4bbb5bd5c659e9e07, type: 2}
+  - {fileID: 2100000, guid: d2db9da58d9fb7845bc11951844a34a7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -27946,12 +27946,13 @@ GameObject:
   m_Component:
   - component: {fileID: 6636056912409685266}
   - component: {fileID: 6636056912409685277}
+  - component: {fileID: 502962951112260629}
   - component: {fileID: 6636056912409685276}
   - component: {fileID: 6636056912409685278}
   - component: {fileID: -6564097418627145630}
-  - component: {fileID: -911963803653384695}
   - component: {fileID: -3657791935059642391}
   - component: {fileID: 972718046881294098}
+  - component: {fileID: 3021146654090450656}
   m_Layer: 0
   m_Name: AntPlayer2
   m_TagString: Player
@@ -27984,13 +27985,28 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6636056912409685273}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 033da13455bdec54db5da3ccd6935a91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 25
   rotationSpeed: 200
+--- !u!114 &502962951112260629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6636056912409685273}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59670334e6a93824d8fa6ac95e2ded3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 20
+  rotationSpeed: 200
+  camPivot: {fileID: 6636056912409685266}
 --- !u!143 &6636056912409685276
 CharacterController:
   m_ObjectHideFlags: 0
@@ -28056,19 +28072,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imoticon: []
   imoticonPrefab: {fileID: 0}
---- !u!114 &-911963803653384695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6636056912409685273}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cd5bf311fea0f74da43837fde2386ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canvas: {fileID: 1162091312035326925}
 --- !u!114 &-3657791935059642391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28088,8 +28091,9 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
+  - {fileID: 502962951112260629}
   - {fileID: 972718046881294098}
-  - {fileID: 8264567976279449857}
+  - {fileID: 5392229343278377436}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -28109,6 +28113,20 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &3021146654090450656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6636056912409685273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cebf2e0db736c764a831a09a89f5fa0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 25
+  rotationSpeed: 200
 --- !u!1 &6636056912447044551
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,11 +15,13 @@ public class SubboardClick : MonoBehaviour
 
         //GameObject subboard;
     GameObject ConfirmWindow;
+    GameObject SubboardParent;
     GameObject g2;
 
     void Start()
     {
         ConfirmWindow = GameObject.Find("SubBoardCanvas").transform.GetChild(0).gameObject;
+        SubboardParent = GameObject.Find("SubBoardCanvas").transform.GetChild(1).gameObject;
         comfrimTitle = ConfirmWindow.transform.GetChild(0).GetComponent<Text>();
         comfrimContent = ConfirmWindow.transform.GetChild(1).GetComponent<Text>();
         likey = ConfirmWindow.transform.GetChild(3).GetComponent<Text>();
@@ -33,6 +35,7 @@ public class SubboardClick : MonoBehaviour
     public void OnClickSubboard()
     {
         //글을 누르면 제목,닉네임,날짜,내용이 표시되어있는 창이 뜬다.
+        SubboardParent.SetActive(false);
         ConfirmWindow.SetActive(true);
 
         comfrimTitle.text = subTitle;
