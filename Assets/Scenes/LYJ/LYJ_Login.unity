@@ -7934,6 +7934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f38c7f42341922d48a8bd466331ea97e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nickname: {fileID: 0}
   id: {fileID: 1904907671}
   password: {fileID: 1804457073}
   playerData:
@@ -7968,11 +7969,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2065370874}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 600dcb2351a2eac4bb85a879126d4cb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RainParticleSystem: {fileID: 0}
   kospiInfo: 0
 --- !u!1 &2109712433
 GameObject:

@@ -28,8 +28,15 @@ public class KospiInfoManager : MonoBehaviour
 {
     public static KospiInfoManager Instance;
 
+
+    //public ParticleSystem RainParticleSystem;
+    public GameObject RainGameObject;
+
     private void Awake()
     {
+        //처음 : 비 파티클 실행 x
+        RainGameObject.SetActive(false);
+
         if (Instance != null)
         {
             Destroy(gameObject);
@@ -58,20 +65,40 @@ public class KospiInfoManager : MonoBehaviour
     {
 
         string data = System.Text.Encoding.Default.GetString(handler.data);
-        print("data : " + data);
+        print("Kospi : " + data);
 
         GetKospi KospiInfo = JsonUtility.FromJson<GetKospi>(data);
 
         kospiInfo = KospiInfo.data;
-        print(kospiInfo);
+        print("kospiInfo : " + kospiInfo);
+
+        // 1. 0이면 맵에 비가 내린다
+        // 2. 가져온 코스피 지수 값이 1이면 비가 내리지 않는다
+        Rain();
+
 
     }
-    
-   
+
+    public void Rain()
+    {
+        if (kospiInfo == 0)
+        {
+            RainGameObject.SetActive(true);
+            print("지수 0 맞음 -> : " + kospiInfo + "비 옴 ");
+        }
+
+        else
+        {
+            RainGameObject.SetActive(false);
+            print("지수 0 아님 -> : " + kospiInfo + "비 안 옴 ");
+        }
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        OnGetKospi();
     }
 
     // Update is called once per frame

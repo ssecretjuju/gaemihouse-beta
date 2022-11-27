@@ -11,6 +11,8 @@ public class LobbyRoomItem : MonoBehaviour
     //规 力格
     public TMP_Text roomInfoTMP;
 
+
+
     //规 荐劳伏
     public TMP_Text roomYieldTMP;
 

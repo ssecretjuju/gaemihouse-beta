@@ -61,6 +61,12 @@ public class ResponseData
 
 public class LoginManager : MonoBehaviour
 {
+
+    //닉네임 설정
+    public Text nickname;
+
+
+
     public static LoginManager Instance;
 
     private void Awake()
@@ -72,6 +78,10 @@ public class LoginManager : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+
+        //닉네임 
+        //nickname.text = playerData.memberNickname;
     }
 
     public InputField id;
