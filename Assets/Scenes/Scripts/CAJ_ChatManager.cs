@@ -28,7 +28,7 @@ public class CAJ_ChatManager : MonoBehaviourPun
         //inputChat에서 엔터를 눌렀을 때 호출되는 함수 등록
         inputChat.onSubmit.AddListener(OnSubmit);
         //커서를 안보이게!
-        Cursor.visible = false;
+        //Cursor.visible = false;
         
 
         nickColor = new Color(

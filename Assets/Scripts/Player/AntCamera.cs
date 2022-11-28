@@ -17,7 +17,18 @@ public class AntCamera : MonoBehaviour
 	// Update is called once per frame
 	void LateUpdate()
 	{
-		Vector3 targetCamPos = target.position + offset;
-		transform.position = Vector3.Lerp(transform.position, targetCamPos, smoothing * Time.deltaTime);
+		float horizontalInput = Input.GetAxisRaw("Horizontal");
+		float verticalInput = Input.GetAxisRaw("Vertical");
+
+		Vector3 movementDirection = new Vector3(horizontalInput, 0, verticalInput);
+		movementDirection.Normalize();
+
+		if (movementDirection != Vector3.zero)
+		{
+			//Vector3 targetCamPos = target.position + offset;
+			//transform.position = Vector3.Lerp(transform.position, targetCamPos, smoothing * Time.deltaTime);
+			transform.position += movementDirection * smoothing * Time.deltaTime;
+
+		}
 	}
 }

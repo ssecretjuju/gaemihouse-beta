@@ -33,7 +33,7 @@ public class AntMove : MonoBehaviourPunCallbacks
     {
         if (SceneManager.GetActiveScene().name == "[Beta]LYJ_LobbyScene")
         {
-            gameObject.GetComponent<AntMove_photon>().enabled = false;
+            gameObject.GetComponent<AntMove_photon1>().enabled = false;
             gameObject.GetComponent<PhotonView>().enabled = false;
             gameObject.GetComponent<PhotonTransformView>().enabled = false;
             gameObject.GetComponentInChildren<PhotonAnimatorView>().enabled = false;
@@ -43,6 +43,8 @@ public class AntMove : MonoBehaviourPunCallbacks
         if (SceneManager.GetActiveScene().name == "LYJ_RoomScene")
         {
             gameObject.GetComponent<AntMove>().enabled = false;
+            //gameObject.GetComponent<AntMove_photon>().enabled = true;
+            gameObject.GetComponent<AntMove_photon1>().enabled = true;
         }
 
 

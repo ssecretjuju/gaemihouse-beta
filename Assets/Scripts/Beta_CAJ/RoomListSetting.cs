@@ -191,10 +191,10 @@ public class RoomListSetting : MonoBehaviourPunCallbacks
     }
 
     //방 참가 요청 (방 이름으로)
-    public void JoinRoom(string inputRoomname)
-    {
-        PhotonNetwork.JoinRoom(inputRoomname);
-    }
+    //public void JoinRoom(string inputRoomname)
+    //{
+    //    PhotonNetwork.JoinRoom(inputRoomname);
+    //}
 
     //방 참가가 완료 되었을 때 호출 되는 함수ge
     public override void OnJoinedRoom()
