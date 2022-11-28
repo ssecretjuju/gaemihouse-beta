@@ -8,6 +8,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using SimpleJSON;
 
+[Serializable]
 
 // 서버로 보낼 파라미터
 public class RoomboardInsertInfo
@@ -20,6 +21,8 @@ public class RoomboardInsertInfo
     public int shareholderRoomCode;
     public int likeCount;
 }
+
+[Serializable]
 
 // 받는 데이터
 public class ResponseRoomboard
@@ -140,17 +143,17 @@ public class SubboardManager : MonoBehaviour
 
     }
 
-
+    
     //back버튼 누르면 글쓰기창이 사라진다
 
     public void OnClickLike()
     {
-        //count = count + 1;
+        count = count + 1;
 
-        //string countNumber = count.ToString();
+        string countNumber = count.ToString();
 
-        //likeCountText.text = countNumber;
-        
+        likeCountText.text = countNumber;
+
         //서버로 좋아요 누른사람의 멤버 코드를 보낸다?
 
 

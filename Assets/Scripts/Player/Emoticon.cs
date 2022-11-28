@@ -25,23 +25,94 @@ KeyCode.Alpha8,
 KeyCode.Alpha9,
 };
 
+    Animator anim;
+    private PhotonView pv;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        anim = GetComponentInChildren<Animator>();
+        pv = GetComponent<PhotonView>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < keyCodes.Length; i++)
+        if (pv.IsMine)
         {
-            if (Input.GetKeyDown(keyCodes[i]))
+            for (int i = 0; i < keyCodes.Length; i++)
             {
-                photonView.RPC("OnEmoticon", RpcTarget.All, i);
+                if (Input.GetKeyDown(keyCodes[i]))
+                {
+                    photonView.RPC("OnEmoticon", RpcTarget.All, i);
+                }
+            }
+
+            //¾Ö´Ï
+
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                anim.SetBool("isHappy", true);
+            }
+            else
+            {
+                anim.SetBool("isHappy", false);
+
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                anim.SetBool("isSad", true);
+            }
+            else
+            {
+                anim.SetBool("isSad", false);
+
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                anim.SetBool("isAngry", true);
+            }
+            else
+            {
+                anim.SetBool("isAngry", false);
+
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                anim.SetBool("isClap", true);
+            }
+            else
+            {
+                anim.SetBool("isClap", false);
+
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha5))
+            {
+                anim.SetBool("isVictory", true);
+            }
+            else
+            {
+                anim.SetBool("isVictory", false);
+
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha6))
+            {
+                anim.SetBool("isPray", true);
+            }
+            else
+            {
+                anim.SetBool("isPray", false);
+
             }
         }
-            
+
+
 
     }
 

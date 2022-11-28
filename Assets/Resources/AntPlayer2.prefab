@@ -446,7 +446,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 117436112499375624}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 8.5, z: 0}
+  m_LocalPosition: {x: 0, y: 6.33, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1909,7 +1909,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 531638031101157862}
   m_LocalRotation: {x: 0.26454803, y: 0.70710665, z: 0.6557548, w: -0.0004689693}
-  m_LocalPosition: {x: 1.2303393, y: 11.613334, z: 0.62444466}
+  m_LocalPosition: {x: 1.2303393, y: 11.4, z: 0.41}
   m_LocalScale: {x: 112.98216, y: 112.98217, z: 112.98217}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2164,6 +2164,9 @@ MonoBehaviour:
   - Type: 4
     SynchronizeType: 0
     Name: isWalk
+  - Type: 4
+    SynchronizeType: 0
+    Name: isHappy
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0
@@ -28091,6 +28094,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b73df80f46f646748b5ea67df55a9ca0, type: 3}
   - {fileID: 21300000, guid: ee7a8ed2ab5281b4cbcdcc63930b232f, type: 3}
   - {fileID: 21300000, guid: 547c5c6b9a9cc5d46a8ac93571b83bbf, type: 3}
+  - {fileID: 21300000, guid: 082627d30d3022c489304c7916ec3b29, type: 3}
+  - {fileID: 21300000, guid: 6933bd7f5055cfb46b87ce08797128b7, type: 3}
   imoticonPrefab: {fileID: 117436112499375624}
 --- !u!114 &9186743407952963211
 MonoBehaviour:
