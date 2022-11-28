@@ -108,7 +108,7 @@ public class RoomListSetting : MonoBehaviourPunCallbacks
 
 
     //방 만들 때 보내는 정보
-    public void PostRoomInfoClick()
+    private void PostRoomInfoClick()
     {
         roomPostInfo data = new roomPostInfo();
         data.roomTitle = inputRoomName.text;
@@ -136,7 +136,7 @@ public class RoomListSetting : MonoBehaviourPunCallbacks
         print("Post 완료!");
     }
 
-    public void CreateRoom()
+    private void CreateRoom()
     {
         // 방 옵션을 설정
         RoomOptions roomOptions = new RoomOptions();
@@ -171,25 +171,25 @@ public class RoomListSetting : MonoBehaviourPunCallbacks
         //아니면 clickroomjoin();
     }
 
-    //마스터 서버 접속성공시 호출(Lobby에 진입할 수 없는 상태)
-    public override void OnConnected()
-    {
-        base.OnConnected();
-        print(System.Reflection.MethodBase.GetCurrentMethod().Name);
-    }
+    ////마스터 서버 접속성공시 호출(Lobby에 진입할 수 없는 상태)
+    //public override void OnConnected()
+    //{
+    //    base.OnConnected();
+    //    print(System.Reflection.MethodBase.GetCurrentMethod().Name);
+    //}
 
-    //마스터 서버 접속성공시 호출(Lobby에 진입할 수 있는 상태)
-    public override void OnConnectedToMaster()
-    {
-        base.OnConnectedToMaster();
-        print(System.Reflection.MethodBase.GetCurrentMethod().Name);
+    ////마스터 서버 접속성공시 호출(Lobby에 진입할 수 있는 상태)
+    //public override void OnConnectedToMaster()
+    //{
+    //    base.OnConnectedToMaster();
+    //    print(System.Reflection.MethodBase.GetCurrentMethod().Name);
 
 
-        //내 닉네임 설정
-        //PhotonNetwork.NickName = inputNickName.text;
-        //로비 진입 요청
-        //PhotonNetwork.JoinLobby();
-    }
+    //    //내 닉네임 설정
+    //    //PhotonNetwork.NickName = inputNickName.text;
+    //    //로비 진입 요청
+    //    //PhotonNetwork.JoinLobby();
+    //}
 
     //로비 진입 성공시 호출
     public override void OnJoinedLobby()
@@ -209,7 +209,7 @@ public class RoomListSetting : MonoBehaviourPunCallbacks
         PhotonNetwork.JoinOrCreateRoom(inputRoomName.text, roomOptions, TypedLobby.Default);
     }
 
-    public void OnClickConnect()
+    private void OnClickConnect()
     {
         //서버 접속 요청
         PhotonNetwork.ConnectUsingSettings();
@@ -235,6 +235,8 @@ public class RoomListSetting : MonoBehaviourPunCallbacks
         PhotonNetwork.JoinRoom(inputRoomname);
     }
 
+    public GameObject CreateRoomUI;
+
     //방 참가가 완료 되었을 때 호출 되는 함수ge
     public override void OnJoinedRoom()
     {
@@ -247,6 +249,10 @@ public class RoomListSetting : MonoBehaviourPunCallbacks
         else
         {
             PhotonNetwork.LoadLevel("LYJ_RoomScene");
+            if (CreateRoomUI.activeSelf == true)
+            {
+                CreateRoomUI.SetActive(false);
+            }
         }
     }
 
@@ -282,7 +288,7 @@ public class RoomListSetting : MonoBehaviourPunCallbacks
     }
 
     ////방 만들 때, 방장 정보를 넘겨주고 싶다.
-    public void OnClickHolder()
+    private void OnClickHolder()
     {
         roomHolderInfo data = new roomHolderInfo();
         data.memberCode = LoginManager.Instance.playerData.memberCode;
@@ -305,7 +311,7 @@ public class RoomListSetting : MonoBehaviourPunCallbacks
         HttpManager.instance.SendRequest(requester);
     }
 
-    public void OnCompleteHolder(DownloadHandler handler)
+    private void OnCompleteHolder(DownloadHandler handler)
     {
         print("방장정보 보내기 완료 ");
     }

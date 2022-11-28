@@ -93,7 +93,7 @@ public class SocketIoClient : MonoBehaviourPun
             //send : 입력 보내는 것 
             
            ws.Send( ChatNickname + "%" + message);
-           print("message : " + message);
+           //print("message : " + message);
             //ws.Send(message);
 
             inputChat.text = "";

@@ -88,4 +88,10 @@ public class CoinManager : MonoBehaviour
         coinInfo = coinResponseData.data;
     }
 
+    //정착금 받기 : 1000코인 주기 
+    public void FirstCoin()
+    {
+        
+    }
+
 }

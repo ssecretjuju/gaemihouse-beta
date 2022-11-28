@@ -299,7 +299,7 @@ public class LobbyRoomList : MonoBehaviourPunCallbacks
     }
 
 
-    public void OnClickConnectLobby()
+    private void OnClickConnectLobby()
     {
         //서버 접속 요청
         PhotonNetwork.ConnectUsingSettings();
@@ -342,38 +342,38 @@ public class LobbyRoomList : MonoBehaviourPunCallbacks
         //PhotonNetwork.JoinLobby();
     }
 
-    //로비 진입 성공시 호출
-    public override void OnJoinedLobby()
-    {
-        base.OnJoinedLobby();
-        print(System.Reflection.MethodBase.GetCurrentMethod().Name);
+    ////로비 진입 성공시 호출
+    //public override void OnJoinedLobby()
+    //{
+    //    base.OnJoinedLobby();
+    //    print(System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-        //LobbyScene으로 이동
-    }
+    //    //LobbyScene으로 이동
+    //}
 
-    //방 참가가 완료 되었을 때 호출 되는 함수
-    public override void OnJoinedRoom()
-    {
-        base.OnJoinedRoom();
-        print("OnJoinedRoom");
-        PhotonNetwork.LoadLevel("LYJ_RoomScene");
-        print("방 참가 완료, 방 이름 : " + PhotonNetwork.CurrentRoom.Name + "현재 방 인원 : " + PhotonNetwork.CurrentRoom.PlayerCount);
-    }
+    ////방 참가가 완료 되었을 때 호출 되는 함수
+    //public override void OnJoinedRoom()
+    //{
+    //    base.OnJoinedRoom();
+    //    print("OnJoinedRoom");
+    //    PhotonNetwork.LoadLevel("LYJ_RoomScene");
+    //    print("방 참가 완료, 방 이름 : " + PhotonNetwork.CurrentRoom.Name + "현재 방 인원 : " + PhotonNetwork.CurrentRoom.PlayerCount);
+    //}
 
-    //방이 생성되면 호출 되는 함수
-    public override void OnCreatedRoom()
-    {
-        base.OnCreatedRoom();
-        print("OnCreatedRoom");
-        print("방 이름 : " + PhotonNetwork.CurrentRoom.Name);
-    }
+    ////방이 생성되면 호출 되는 함수
+    //public override void OnCreatedRoom()
+    //{
+    //    base.OnCreatedRoom();
+    //    print("OnCreatedRoom");
+    //    print("방 이름 : " + PhotonNetwork.CurrentRoom.Name);
+    //}
 
     //방 생성이 실패 될때 호출 되는 함수
-    public override void OnCreateRoomFailed(short returnCode, string message)
-    {
-        base.OnCreateRoomFailed(returnCode, message);
-        print("OnCreateRoomFailed , " + returnCode + ", " + message);
-    }
+    //public override void OnCreateRoomFailed(short returnCode, string message)
+    //{
+    //    base.OnCreateRoomFailed(returnCode, message);
+    //    print("OnCreateRoomFailed , " + returnCode + ", " + message);
+    //}
 
     //방 참가 요청 (방 이름으로)
     public void JoinRoom(string inputRoomname)
@@ -382,12 +382,12 @@ public class LobbyRoomList : MonoBehaviourPunCallbacks
     }
 
 
-    //방 참가가 실패 되었을 때 호출 되는 함수
-    public override void OnJoinRoomFailed(short returnCode, string message)
-    {
-        base.OnJoinRoomFailed(returnCode, message);
-        print("OnJoinRoomFailed, " + returnCode + ", " + message);
-    }
+    ////방 참가가 실패 되었을 때 호출 되는 함수
+    //public override void OnJoinRoomFailed(short returnCode, string message)
+    //{
+    //    base.OnJoinRoomFailed(returnCode, message);
+    //    print("OnJoinRoomFailed, " + returnCode + ", " + message);
+    //}
 
 
 

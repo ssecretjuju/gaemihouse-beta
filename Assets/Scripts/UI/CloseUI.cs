@@ -5,6 +5,7 @@ using UnityEngine;
 public class CloseUI : MonoBehaviour
 {
     public GameObject XButton;
+    public GameObject GoButton;
 
     public GameObject ParentUI;
     
