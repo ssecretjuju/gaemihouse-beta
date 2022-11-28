@@ -2111,12 +2111,12 @@ Transform:
   m_Children:
   - {fileID: 4546043796212779820}
   - {fileID: 6636056912447044548}
-  - {fileID: 6636056912109805207}
   - {fileID: 6636056912849691438}
+  - {fileID: 6636056912109805207}
   - {fileID: 5140473984341497778}
   - {fileID: 6636056912640525739}
-  - {fileID: 6636056912086929467}
   - {fileID: 6636056912463384381}
+  - {fileID: 6636056912086929467}
   - {fileID: 6636056912772957877}
   - {fileID: 2525133714575639841}
   - {fileID: 876813606580075356}
@@ -26401,7 +26401,7 @@ GameObject:
   - component: {fileID: 6636056912086929467}
   - component: {fileID: 6636056912086929464}
   m_Layer: 0
-  m_Name: Body2
+  m_Name: Body3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26420,7 +26420,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 241002978786230710}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &6636056912086929464
 SkinnedMeshRenderer:
@@ -27174,7 +27174,7 @@ GameObject:
   - component: {fileID: 6636056912109805207}
   - component: {fileID: 6636056912109805204}
   m_Layer: 0
-  m_Name: Face2
+  m_Name: Face3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27193,7 +27193,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 241002978786230710}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &6636056912109805204
 SkinnedMeshRenderer:
@@ -28894,7 +28894,7 @@ GameObject:
   - component: {fileID: 6636056912463384381}
   - component: {fileID: 6636056912463384370}
   m_Layer: 0
-  m_Name: Body3
+  m_Name: Body2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28907,13 +28907,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6636056912463384380}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0.98605794, y: 0.31215143, z: -0.2308726}
-  m_LocalScale: {x: 49.257545, y: 33.14872, z: 33.14872}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: -0.9860586, y: 0.3121516, z: -0.23087248}
+  m_LocalScale: {x: 49.25755, y: 33.14872, z: 33.14872}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 241002978786230710}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &6636056912463384370
 SkinnedMeshRenderer:
@@ -30471,7 +30471,7 @@ GameObject:
   - component: {fileID: 6636056912849691438}
   - component: {fileID: 6636056912849691439}
   m_Layer: 0
-  m_Name: Face3
+  m_Name: Face2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30490,7 +30490,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 241002978786230710}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &6636056912849691439
 SkinnedMeshRenderer:

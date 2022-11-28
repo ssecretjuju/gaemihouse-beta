@@ -235,27 +235,26 @@ public class RoomListSetting : MonoBehaviourPunCallbacks
     //    PhotonNetwork.JoinRoom(inputRoomname);
     //}
 
-
-    public GameObject CreateRoomUI;
-
+    public GameObject CreateRoocmUI;
 
     //방 참가가 완료 되었을 때 호출 되는 함수ge
     public override void OnJoinedRoom()
     {
         base.OnJoinedRoom();
         print("OnJoinedRoom");
-        if (PhotonNetwork.CurrentRoom.Name == "전체")
-        {
-            PhotonNetwork.LoadLevel("CAJ_LobbyRoomScene");
-        }
-        else
-        {
-            PhotonNetwork.LoadLevel("LYJ_RoomScene");
-            if (CreateRoomUI.activeSelf == true)
-            {
-                CreateRoomUI.SetActive(false);
-            }
-        }
+        PhotonNetwork.LoadLevel("LYJ_RoomScene");
+        //if (PhotonNetwork.CurrentRoom.Name == "전체")
+        //{
+        //    PhotonNetwork.LoadLevel("CAJ_LobbyRoomScene");
+        //}
+        //else
+        //{
+            
+        //    if (CreateRoomUI.activeSelf == true)
+        //    {
+        //        CreateRoomUI.SetActive(false);
+        //    }
+        //}
     }
 
     //방 참가가 실패 되었을 때 호출 되는 함수

@@ -310,7 +310,7 @@ public class LobbyRoomList : MonoBehaviourPunCallbacks
         base.OnConnected();
         print(System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-        
+  
     }
 
     //마스터 서버 접속성공시 호출(Lobby에 진입할 수 있는 상태)

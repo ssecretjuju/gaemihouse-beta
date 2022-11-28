@@ -8,6 +8,7 @@ using UnityEngine.UI;
 using SimpleJSON;
 using UnityEngine.SceneManagement;
 using Newtonsoft.Json.Linq;
+using Photon.Pun;
 
 // °¡Á®¿Ã Ä¿½ºÅÒ Á¤º¸
 [Serializable]
@@ -26,7 +27,7 @@ public class ResponseCustomData
     public string message;
     public CustomData data;
 }
-public class AntCustom : MonoBehaviour
+public class AntCustom : MonoBehaviourPun
 {
     public static AntCustom instance;
 
@@ -56,7 +57,10 @@ public class AntCustom : MonoBehaviour
         {
             //CustomCanvas.SetActive(false);
             print("·ë¾À");
-            onGetCustomData();
+            if (photonView.IsMine)
+            {
+                onGetCustomData();
+            }
         }
 
     }
@@ -64,7 +68,7 @@ public class AntCustom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public CustomData customdata;
@@ -86,7 +90,7 @@ public class AntCustom : MonoBehaviour
         print("Ä¿½ºÅÒ Á¤º¸ °Ù ¿Ï·á!");
     }
 
-    
+
     public void OnLoadCustom(DownloadHandler handler)
     {
         //JObject jobject = JObject.Parse(handler.text);
@@ -110,7 +114,22 @@ public class AntCustom : MonoBehaviour
         bodyType[customdata.bodyType].SetActive(true);
         accType[customdata.accType].SetActive(true);
 
-        
+        if (photonView.IsMine)
+        {
+            photonView.RPC("SetCharColor", RpcTarget.AllBuffered, customdata.faceType, customdata.bodyType, customdata.accType);
+        }
+    }
+
+    [PunRPC]
+    public void SetCharColor(int face, int body, int acc)
+    {
+        faceType[0].SetActive(false);
+        bodyType[0].SetActive(false);
+        accType[0].SetActive(false);
+
+        faceType[face].SetActive(true);
+        bodyType[body].SetActive(true);
+        accType[acc].SetActive(true);
     }
 
 }

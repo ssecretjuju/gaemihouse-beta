@@ -8,6 +8,13 @@ using System;
 
 //회원가입창에 입력되어 json으로 저장하여 DB에 전송할 정보들
 
+//public class CoinInfo
+//{
+//    public int memberCode;
+//    public int coinAmount;
+//}
+
+
 [Serializable]
 public class SignInfo
 {
