@@ -18,7 +18,11 @@ public class SocketIoClient : MonoBehaviourPun
     public RectTransform trContent;
     
     public string ChatNickname;
-    
+
+
+
+
+
     //public RectTransform rtScrollView;
     float prevContentH;
     

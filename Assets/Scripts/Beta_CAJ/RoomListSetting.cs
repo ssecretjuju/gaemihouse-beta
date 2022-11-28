@@ -171,25 +171,25 @@ public class RoomListSetting : MonoBehaviourPunCallbacks
         //아니면 clickroomjoin();
     }
 
-    ////마스터 서버 접속성공시 호출(Lobby에 진입할 수 없는 상태)
-    //public override void OnConnected()
-    //{
-    //    base.OnConnected();
-    //    print(System.Reflection.MethodBase.GetCurrentMethod().Name);
-    //}
+    //마스터 서버 접속성공시 호출(Lobby에 진입할 수 없는 상태)
+    public override void OnConnected()
+    {
+        base.OnConnected();
+        print(System.Reflection.MethodBase.GetCurrentMethod().Name);
+    }
 
-    ////마스터 서버 접속성공시 호출(Lobby에 진입할 수 있는 상태)
-    //public override void OnConnectedToMaster()
-    //{
-    //    base.OnConnectedToMaster();
-    //    print(System.Reflection.MethodBase.GetCurrentMethod().Name);
+    //마스터 서버 접속성공시 호출(Lobby에 진입할 수 있는 상태)
+    public override void OnConnectedToMaster()
+    {
+        base.OnConnectedToMaster();
+        print(System.Reflection.MethodBase.GetCurrentMethod().Name);
 
 
-    //    //내 닉네임 설정
-    //    //PhotonNetwork.NickName = inputNickName.text;
-    //    //로비 진입 요청
-    //    //PhotonNetwork.JoinLobby();
-    //}
+        //내 닉네임 설정
+        //PhotonNetwork.NickName = inputNickName.text;
+        //로비 진입 요청
+        //PhotonNetwork.JoinLobby();
+    }
 
     //로비 진입 성공시 호출
     public override void OnJoinedLobby()
@@ -230,10 +230,10 @@ public class RoomListSetting : MonoBehaviourPunCallbacks
     }
 
     //방 참가 요청 (방 이름으로)
-    public void JoinRoom(string inputRoomname)
-    {
-        PhotonNetwork.JoinRoom(inputRoomname);
-    }
+    //public void JoinRoom(string inputRoomname)
+    //{
+    //    PhotonNetwork.JoinRoom(inputRoomname);
+    //}
 
     public GameObject CreateRoomUI;
 

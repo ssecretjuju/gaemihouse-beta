@@ -19,7 +19,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
         //플레이어를 생성한다.
         //PhotonNetwork.Instantiate("Player", spawnPos[idx], Quaternion.identity);
-        PhotonNetwork.Instantiate("AntPlayer", new Vector3(58, 4, -109), Quaternion.identity);
+        PhotonNetwork.Instantiate("AntPlayer2", new Vector3(58, 4, -109), Quaternion.identity);
     }
 
     // Update is called once per frame

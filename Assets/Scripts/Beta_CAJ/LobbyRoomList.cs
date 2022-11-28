@@ -80,7 +80,7 @@ public class LobbyRoomList : MonoBehaviourPunCallbacks
     public void CompleteGetRoomListAll(DownloadHandler handler)
     {
         ListenData array = JsonUtility.FromJson<ListenData>(handler.text);
-        print($"테스트: {array.data[1].roomCode}가 룸 코드다");
+        //print($"테스트: {array.data[1].roomCode}가 룸 코드다");
 
         foreach (RoomData rData in array.data)
         {
@@ -264,12 +264,11 @@ public class LobbyRoomList : MonoBehaviourPunCallbacks
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            print("click");
             RaycastHit hit;
             print("hit");
             //int mask = (1 << 3);
-            int mask = 1 << LayerMask.NameToLayer("Building");
-            if (Physics.Raycast(ray, out hit, 150f, mask))
+            //int mask = 1 << LayerMask.NameToLayer("Building");
+            if (Physics.Raycast(ray, out hit, 150f))
             {
                 clickRoomName = hit.collider.gameObject.name.ToString();
                 //클릭한 물체의 태그가 House라면 
@@ -335,45 +334,41 @@ public class LobbyRoomList : MonoBehaviourPunCallbacks
        PhotonNetwork.JoinOrCreateRoom(clickRoomName, roomOptions, TypedLobby.Default);
         //PhotonNetwork.JoinOrCreateRoom("HIHI", roomOptions, TypedLobby.Default);
 
-        
-        //내 닉네임 설정
-        //PhotonNetwork.NickName = inputNickName.text;
-        //로비 진입 요청
-        //PhotonNetwork.JoinLobby();
+  
     }
 
-    ////로비 진입 성공시 호출
-    //public override void OnJoinedLobby()
-    //{
-    //    base.OnJoinedLobby();
-    //    print(System.Reflection.MethodBase.GetCurrentMethod().Name);
+    //로비 진입 성공시 호출
+    public override void OnJoinedLobby()
+    {
+        base.OnJoinedLobby();
+        print(System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-    //    //LobbyScene으로 이동
-    //}
+        //LobbyScene으로 이동
+    }
 
-    ////방 참가가 완료 되었을 때 호출 되는 함수
-    //public override void OnJoinedRoom()
-    //{
-    //    base.OnJoinedRoom();
-    //    print("OnJoinedRoom");
-    //    PhotonNetwork.LoadLevel("LYJ_RoomScene");
-    //    print("방 참가 완료, 방 이름 : " + PhotonNetwork.CurrentRoom.Name + "현재 방 인원 : " + PhotonNetwork.CurrentRoom.PlayerCount);
-    //}
+    //방 참가가 완료 되었을 때 호출 되는 함수
+    public override void OnJoinedRoom()
+    {
+        base.OnJoinedRoom();
+        print("OnJoinedRoom");
+        PhotonNetwork.LoadLevel("LYJ_RoomScene");
+        print("방 참가 완료, 방 이름 : " + PhotonNetwork.CurrentRoom.Name + "현재 방 인원 : " + PhotonNetwork.CurrentRoom.PlayerCount);
+    }
 
-    ////방이 생성되면 호출 되는 함수
-    //public override void OnCreatedRoom()
-    //{
-    //    base.OnCreatedRoom();
-    //    print("OnCreatedRoom");
-    //    print("방 이름 : " + PhotonNetwork.CurrentRoom.Name);
-    //}
+    //방이 생성되면 호출 되는 함수
+    public override void OnCreatedRoom()
+    {
+        base.OnCreatedRoom();
+        print("OnCreatedRoom");
+        print("방 이름 : " + PhotonNetwork.CurrentRoom.Name);
+    }
 
     //방 생성이 실패 될때 호출 되는 함수
-    //public override void OnCreateRoomFailed(short returnCode, string message)
-    //{
-    //    base.OnCreateRoomFailed(returnCode, message);
-    //    print("OnCreateRoomFailed , " + returnCode + ", " + message);
-    //}
+    public override void OnCreateRoomFailed(short returnCode, string message)
+    {
+        base.OnCreateRoomFailed(returnCode, message);
+        print("OnCreateRoomFailed , " + returnCode + ", " + message);
+    }
 
     //방 참가 요청 (방 이름으로)
     public void JoinRoom(string inputRoomname)
@@ -382,12 +377,12 @@ public class LobbyRoomList : MonoBehaviourPunCallbacks
     }
 
 
-    ////방 참가가 실패 되었을 때 호출 되는 함수
-    //public override void OnJoinRoomFailed(short returnCode, string message)
-    //{
-    //    base.OnJoinRoomFailed(returnCode, message);
-    //    print("OnJoinRoomFailed, " + returnCode + ", " + message);
-    //}
+    //방 참가가 실패 되었을 때 호출 되는 함수
+    public override void OnJoinRoomFailed(short returnCode, string message)
+    {
+        base.OnJoinRoomFailed(returnCode, message);
+        print("OnJoinRoomFailed, " + returnCode + ", " + message);
+    }
 
 
 

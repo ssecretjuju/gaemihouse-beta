@@ -105,7 +105,7 @@ public class LoginManager : MonoBehaviour
 
 
         requester.onComplete = OnCilckDownload;
-
+        
 
         HttpManager.instance.SendRequest(requester);
     }

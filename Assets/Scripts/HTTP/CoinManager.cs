@@ -26,6 +26,12 @@ public class CoinResponseData
     public CoinInfo data;
 }
 
+public class CoinPostInfo
+{
+    public int memberCode;
+    public int coinAmount;
+}
+
 public class CoinManager : MonoBehaviour
 {
     public static CoinManager Instance;
@@ -45,6 +51,7 @@ public class CoinManager : MonoBehaviour
     void Start()
     {
         OnGetCoin();
+        ClickPostCoin();
     }
 
     // Update is called once per frame
@@ -89,9 +96,24 @@ public class CoinManager : MonoBehaviour
     }
 
     //정착금 받기 : 1000코인 주기 
-    public void FirstCoin()
+    public void ClickPostCoin()
     {
-        
+        CoinPostInfo data = new CoinPostInfo();
+        data.memberCode = LoginManager.Instance.playerData.memberCode;
+        print("멤버코드 : " + data.memberCode);
+        data.coinAmount = 1000;
+
+        HttpRequester requester = new HttpRequester();
+        requester.url = "http://secretjujucicd-api-env.eba-iuvr5h2k.ap-northeast-2.elasticbeanstalk.com/coin/update";
+        requester.requestType = RequestType.POST;
+        print("Post test");
+        print(coinData);
+
+        requester.postData = JsonUtility.ToJson(data, true);
+        print(requester.postData);
+
+        HttpManager.instance.SendRequest(requester);
+        print("Post 완료!");
     }
 
 }
