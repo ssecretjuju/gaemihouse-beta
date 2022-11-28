@@ -40,7 +40,7 @@ public class PressF1 : MonoBehaviour
     {
         if (onPlayer == true)
         {
-            //popUpImage.SetActive(true);
+            popUpImage.SetActive(true);
 
             if (Input.GetKeyDown(KeyCode.F))
             {

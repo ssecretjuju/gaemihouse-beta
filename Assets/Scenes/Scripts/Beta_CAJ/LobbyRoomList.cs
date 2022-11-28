@@ -12,6 +12,23 @@ using Photon.Pun;
 using Photon.Realtime;
 
 
+//(방 수익률 가져오기 위해) 서버에 보낼 정보
+
+[Serializable]
+public class ForRoomYieldinfo
+{
+    public string roomTitle;
+}
+
+[Serializable]
+public class ResponseYield
+{
+    public int status;
+    public string message;
+    public double data; // 수익률
+}
+
+
 //GetRoomAll로 방 목록 정보 받아오기부터 하고,
 //CreateRoomListUI를 해준다 
 //->코루틴 사용 !! 
@@ -27,6 +44,8 @@ public class LobbyRoomList : MonoBehaviourPunCallbacks
         //GetRoom();
         GetRoomAll();
     }
+
+
 
     // 1. 방 정보 받아오기
 
@@ -360,7 +379,7 @@ public class LobbyRoomList : MonoBehaviourPunCallbacks
     {
         base.OnJoinedRoom();
         print("OnJoinedRoom");
-        PhotonNetwork.LoadLevel("LYJ_RoomScene");
+        //PhotonNetwork.LoadLevel("LYJ_RoomScene");
         print("방 참가 완료, 방 이름 : " + PhotonNetwork.CurrentRoom.Name);
         print("현재 방 인원 : " + PhotonNetwork.CurrentRoom.PlayerCount);
     }
