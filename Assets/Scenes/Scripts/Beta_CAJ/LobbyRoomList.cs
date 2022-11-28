@@ -12,21 +12,6 @@ using Photon.Pun;
 using Photon.Realtime;
 
 
-//(방 수익률 가져오기 위해) 서버에 보낼 정보
-
-[Serializable]
-public class ForRoomYieldinfo
-{
-    public string roomTitle;
-}
-
-[Serializable]
-public class ResponseYield
-{
-    public int status;
-    public string message;
-    public double data; // 수익률
-}
 
 
 //GetRoomAll로 방 목록 정보 받아오기부터 하고,
@@ -104,12 +89,12 @@ public class LobbyRoomList : MonoBehaviourPunCallbacks
         foreach (RoomData rData in array.data)
         {
             roomTitles.Add(rData.roomTitle);
-
             roomYields.Add(rData.roomYield);
+
         }
 
-
-
+        
+        
         //전역 변수에 저장
         dataCount = array.data.Length;
 

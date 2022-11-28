@@ -39,11 +39,14 @@ public class SignupManager : MonoBehaviour
     //signup 버튼을 누르면 정보수집 동의 창 UI가 뜬다
     public GameObject agreeCanvas;
     public GameObject signUpCanvas;
+    public GameObject loginCanvas;
        
     public void OnClickSignBtn()
     {
         Debug.Log("동의창");
         agreeCanvas.SetActive(true);
+        loginCanvas.SetActive(false);
+
     }
 
     //동의 버튼을 누르면 회원가입 창 UI가 뜬다.
@@ -54,6 +57,13 @@ public class SignupManager : MonoBehaviour
         signUpCanvas.SetActive(true);
     }
 
+    public void OnSignupBtn()
+    {
+        loginCanvas.SetActive(true);
+        signUpCanvas.SetActive(false);
+    }
+
+
     public void OnClickJoinBtn()
     {
         SignInfo data = new SignInfo();
@@ -63,15 +73,15 @@ public class SignupManager : MonoBehaviour
         data.memberNickname = memberNickname.text;
         data.stockCareer = stockCareer.text;
         data.stockFirm = stockFirm.text;
-        data.termsAgreementYn = termsAgreementYn.text;
-        data.accountNum = accountNum.text;
-        data.appKey = appKey.text;
-        data.appSecret = appSecret.text;
+        data.termsAgreementYn = "Y";
+        data.accountNum = 110110110.ToString();
+        data.appKey = 110110110.ToString();
+        data.appSecret = 110110110.ToString();
 
 
 
         HttpRequester requester = new HttpRequester();
-        requester.url = "http://3.34.133.115:8080/auth/signup";
+        requester.url = "http://secretjujucicd-api-env.eba-iuvr5h2k.ap-northeast-2.elasticbeanstalk.com/auth/signup";
         requester.requestType = RequestType.POST;
         print("test");
 
@@ -79,6 +89,9 @@ public class SignupManager : MonoBehaviour
         print(requester.postData);
 
         HttpManager.instance.SendRequest(requester);
+
+        signUpCanvas.SetActive(false);
+        loginCanvas.SetActive(true);
 
     }
     // Start is called before the first frame update
