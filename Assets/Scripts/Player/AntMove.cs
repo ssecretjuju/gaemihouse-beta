@@ -17,15 +17,20 @@ public class AntMove : MonoBehaviourPunCallbacks
 {
     public float speed, rotationSpeed;
     private CharacterController characterController;
+    private Text Nickname;
 
     Animator anim;
-
+    
     void Start()
     {
         //·Îºñ¾ÀÀÌ¸é Æ÷Åæºä½ºÅ©¸³Æ®µé ²ô±â
-
+        
         characterController = GetComponent<CharacterController>();
-        anim = GetComponentInChildren<Animator>();       
+        anim = GetComponentInChildren<Animator>();
+
+        Nickname = GameObject.Find("Canvas").transform.GetChild(0).GetComponent<Text>();
+        Nickname.text = LoginManager.Instance.playerData.memberNickname;
+
     }
 
     // Update is called once per frame
@@ -72,10 +77,12 @@ public class AntMove : MonoBehaviourPunCallbacks
 
         }
 
+        Nickname.transform.forward = Camera.main.transform.forward;
     }
 
     void Update()
     {
+
         if (SceneManager.GetActiveScene().name == "LYJ_CharacterSelection")
         {
             return;

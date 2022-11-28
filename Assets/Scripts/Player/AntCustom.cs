@@ -114,7 +114,9 @@ public class AntCustom : MonoBehaviourPun
         bodyType[customdata.bodyType].SetActive(true);
         accType[customdata.accType].SetActive(true);
 
-        if (photonView.IsMine)
+
+        if (photonView.IsMine && photonView.Owner != null)
+
         {
             photonView.RPC("SetCharColor", RpcTarget.AllBuffered, customdata.faceType, customdata.bodyType, customdata.accType);
         }

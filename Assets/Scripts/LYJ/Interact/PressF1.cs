@@ -31,8 +31,7 @@ public class PressF1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        
+            
     }
 
     // Update is called once per frame
@@ -40,7 +39,8 @@ public class PressF1 : MonoBehaviour
     {
         if (onPlayer == true)
         {
-            //popUpImage.SetActive(true);
+            popUpImage.SetActive(true);
+            popUpImage.transform.forward = Camera.main.transform.forward;
 
             if (Input.GetKeyDown(KeyCode.F))
             {
@@ -49,6 +49,11 @@ public class PressF1 : MonoBehaviour
                 OnGetMemoboard();
 
             }
+        }
+
+        if (onPlayer == false)
+        {
+            popUpImage.SetActive(false);
         }
     }
     private void OnTriggerEnter(Collider other)

@@ -10,7 +10,8 @@ using UnityEngine.Networking;
 using System.IO;
 using Photon.Pun;
 using Photon.Realtime;
-using Random = System.Random;
+
+
 
 
 //GetRoomAll로 방 목록 정보 받아오기부터 하고,
@@ -28,6 +29,8 @@ public class LobbyRoomList : MonoBehaviourPunCallbacks
         //GetRoom();
         GetRoomAll();
     }
+
+
 
     // 1. 방 정보 받아오기
 
@@ -81,17 +84,17 @@ public class LobbyRoomList : MonoBehaviourPunCallbacks
     public void CompleteGetRoomListAll(DownloadHandler handler)
     {
         ListenData array = JsonUtility.FromJson<ListenData>(handler.text);
-        //print($"테스트: {array.data[1].roomCode}가 룸 코드다");
+        print($"테스트: {array.data[1].roomCode}가 룸 코드다");
 
         foreach (RoomData rData in array.data)
         {
             roomTitles.Add(rData.roomTitle);
-
             roomYields.Add(rData.roomYield);
+
         }
 
-
-
+        
+        
         //전역 변수에 저장
         dataCount = array.data.Length;
 
@@ -131,7 +134,6 @@ public class LobbyRoomList : MonoBehaviourPunCallbacks
             for (int i = 0; i < dataCount; i++)
             {
                 double yield = roomYields[i];
-                //float yield = UnityEngine.Random.Range(-10.3f, 7.3f); 
                 //double roomYields[i] = yield;
                 
                 // 1. 수익률 < -10
@@ -266,11 +268,12 @@ public class LobbyRoomList : MonoBehaviourPunCallbacks
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            print("click");
             RaycastHit hit;
             print("hit");
             //int mask = (1 << 3);
-            //int mask = 1 << LayerMask.NameToLayer("Building");
-            if (Physics.Raycast(ray, out hit, 150f))
+            int mask = 1 << LayerMask.NameToLayer("Building");
+            if (Physics.Raycast(ray, out hit, 150f, mask))
             {
                 clickRoomName = hit.collider.gameObject.name.ToString();
                 //클릭한 물체의 태그가 House라면 
@@ -293,14 +296,12 @@ public class LobbyRoomList : MonoBehaviourPunCallbacks
                 {
                     return;
                 }
-
-                //왼쪽 클릭 : 방 참가 인원 + 키워드 2개 보여주기 ! 
             }
         }
     }
 
 
-    private void OnClickConnectLobby()
+    public void OnClickConnectLobby()
     {
         //서버 접속 요청
         PhotonNetwork.ConnectUsingSettings();
@@ -312,7 +313,7 @@ public class LobbyRoomList : MonoBehaviourPunCallbacks
         base.OnConnected();
         print(System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-  
+        
     }
 
     //마스터 서버 접속성공시 호출(Lobby에 진입할 수 있는 상태)
@@ -333,10 +334,17 @@ public class LobbyRoomList : MonoBehaviourPunCallbacks
         };
         print(roomOptions);
 
-       PhotonNetwork.JoinOrCreateRoom(clickRoomName, roomOptions, TypedLobby.Default);
-        //PhotonNetwork.JoinOrCreateRoom("HIHI", roomOptions, TypedLobby.Default);
 
-  
+        print("joinorCreateRoom 완료");
+        Debug.Log("clickRoomName " + clickRoomName);
+        
+        PhotonNetwork.JoinOrCreateRoom("HIHI", roomOptions, TypedLobby.Default);
+        print("111111111111111");
+        
+        //내 닉네임 설정
+        //PhotonNetwork.NickName = inputNickName.text;
+        //로비 진입 요청
+        //PhotonNetwork.JoinLobby();
     }
 
     //로비 진입 성공시 호출
@@ -346,6 +354,9 @@ public class LobbyRoomList : MonoBehaviourPunCallbacks
         print(System.Reflection.MethodBase.GetCurrentMethod().Name);
 
         //LobbyScene으로 이동
+        //PhotonNetwork.LoadLevel("CAJ_LobbyScene");
+        //PhotonNetwork.LoadLevel("CAJ_CreateScene");
+        //print("닉네임 : " + PhotonNetwork.NickName);]
     }
 
     //방 참가가 완료 되었을 때 호출 되는 함수
@@ -353,8 +364,9 @@ public class LobbyRoomList : MonoBehaviourPunCallbacks
     {
         base.OnJoinedRoom();
         print("OnJoinedRoom");
-        PhotonNetwork.LoadLevel("LYJ_RoomScene");
-        print("방 참가 완료, 방 이름 : " + PhotonNetwork.CurrentRoom.Name + "현재 방 인원 : " + PhotonNetwork.CurrentRoom.PlayerCount);
+        //PhotonNetwork.LoadLevel("LYJ_RoomScene");
+        print("방 참가 완료, 방 이름 : " + PhotonNetwork.CurrentRoom.Name);
+        print("현재 방 인원 : " + PhotonNetwork.CurrentRoom.PlayerCount);
     }
 
     //방이 생성되면 호출 되는 함수
@@ -385,8 +397,6 @@ public class LobbyRoomList : MonoBehaviourPunCallbacks
         base.OnJoinRoomFailed(returnCode, message);
         print("OnJoinRoomFailed, " + returnCode + ", " + message);
     }
-
-
 
 }
 
