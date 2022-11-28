@@ -17,12 +17,13 @@ public class SearchInfo
     public string searchText;
 }
 
+
 [Serializable]
 public class ImageUrl
 {
-    public int status;
-    public string message;
-    public string data;
+    public string url1;
+    public string url2;
+    
 }
 
 public class PredictBoardManager : MonoBehaviour
@@ -31,10 +32,7 @@ public class PredictBoardManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            predictCanvas.SetActive(true);
-        }
+
     }
 
     public void OnCancelBtn()
@@ -52,7 +50,7 @@ public class PredictBoardManager : MonoBehaviour
         data.searchText = searchText.text;
 
         HttpRequester requester = new HttpRequester();
-        requester.url = "http://3.34.133.115:8080/stock-prediction/" + searchText.text;
+        requester.url = "http://secretjujucicd-api-env.eba-iuvr5h2k.ap-northeast-2.elasticbeanstalk.com/stock-prediction/" + searchText.text;
         requester.requestType = RequestType.POST;
         print("test");
 
@@ -67,16 +65,23 @@ public class PredictBoardManager : MonoBehaviour
     }
 
     public RawImage img;
+    public RawImage img2;
     string ss;
+    string ss2;
 
     //검색했을 때 받는 이미지 주소값을 저장
     public void OnCompleteSearch(DownloadHandler handler)
     {
-        ImageUrl url = JsonUtility.FromJson<ImageUrl>(handler.text);
-        print(url.data);
-
-        ss = url.data;
         
+        ImageUrl url = JsonUtility.FromJson<ImageUrl>(handler.text);
+        print(url.url1);
+
+        ss = url.url1;
+        ss2 = url.url2;
+
+        print("2번 유알엘 주소 :" + url.url2);
+
+
         StartCoroutine(GetTexture());
 
     }
@@ -85,7 +90,11 @@ public class PredictBoardManager : MonoBehaviour
     IEnumerator GetTexture()
     {
         UnityWebRequest www = UnityWebRequestTexture.GetTexture(ss);
+        UnityWebRequest www2 = UnityWebRequestTexture.GetTexture(ss2);
+
         yield return www.SendWebRequest();
+        yield return www2.SendWebRequest();
+
 
         if (www.isNetworkError || www.isHttpError)
         {
@@ -94,6 +103,7 @@ public class PredictBoardManager : MonoBehaviour
         else
         {
             img.texture = ((DownloadHandlerTexture)www.downloadHandler).texture;
+            img2.texture = ((DownloadHandlerTexture)www2.downloadHandler).texture;
         }
     }
 }

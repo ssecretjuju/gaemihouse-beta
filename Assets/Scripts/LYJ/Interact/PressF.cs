@@ -52,7 +52,8 @@ public class PressF : MonoBehaviour
     {
         if (onPlayer == true)
         {
-            //popUpImage.SetActive(true);
+            popUpImage.SetActive(true);
+            popUpImage.transform.forward = Camera.main.transform.forward;
 
             if (Input.GetKeyDown(KeyCode.F))
             {
@@ -60,6 +61,11 @@ public class PressF : MonoBehaviour
                 OnGetSubboard();
 
             }
+        }
+
+        if (onPlayer == false)
+        {
+            popUpImage.SetActive(false);
         }
     }
     private void OnTriggerEnter(Collider other)

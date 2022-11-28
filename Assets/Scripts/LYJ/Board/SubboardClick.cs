@@ -50,8 +50,6 @@ public class SubboardClick : MonoBehaviour
 
         //OnGetConfirmWindow();
 
-
-
     }
 
 

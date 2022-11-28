@@ -57,12 +57,13 @@ public class SubboardManager : MonoBehaviour
     public Text confirmTitleText;
 
 
-    int count = 0;
+    int count;
     public Text likeCountText;
 
 
     void Start()
     {
+        confirmWindow= GameObject.Find("SubBoardCanvas").transform.GetChild(0).gameObject;
         //confirmBtn.onClick.AddListener(OnClickSubboard);
         confirmWindow.SetActive(false);
        
