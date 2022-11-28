@@ -1,7 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
+using SimpleJSON;
+
+
 
 public class SubboardClick : MonoBehaviour
 {
@@ -44,7 +50,11 @@ public class SubboardClick : MonoBehaviour
 
         //OnGetConfirmWindow();
 
+
+
     }
+
+
     // Start is called before the first frame update
 
     // Update is called once per frame

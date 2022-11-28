@@ -19,6 +19,18 @@ public class RoomBoardInfo
 
 public class PressF : MonoBehaviour
 {
+    public static PressF Instance;
+
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
 
     public GameObject Subboard;
     public Transform boardItemParent;
@@ -84,7 +96,8 @@ public class PressF : MonoBehaviour
 
     public List<int> subboardinfo;
     public GameObject confirmWriting;
-
+    public int boardmembercode;
+    public int roomboardcode;
     public void GetRoomBoard(DownloadHandler handler)
     {
         
@@ -106,6 +119,9 @@ public class PressF : MonoBehaviour
             subboardinfo.Add(node["data"][i]["memberNickname"]);
             subboardinfo.Add(node["data"][i]["likeCount"]);
             print("좋아요 수 +" + node["data"][i]["likeCount"]);
+            subboardinfo.Add(node["data"][i]["memberCode"]);
+            print("게시판멤버코드 +" + node["data"][i]["memberCode"]);
+            subboardinfo.Add(node["data"][i]["roomBoardCode"]);
 
             GameObject Item = Instantiate(Subboard, boardItemParent);
             SubboardClick subboardClick = Item.GetComponent<SubboardClick>();
@@ -115,12 +131,13 @@ public class PressF : MonoBehaviour
 
             Item.transform.GetChild(0).GetComponent<InputField>().text = node["data"][i]["roomBoardTitle"];
             Item.transform.GetChild(1).GetComponent<Text>().text = node["data"][i]["memberNickname"];         
-            Item.transform.GetChild(2).GetComponent<Text>().text = node["data"][i]["roomBoardRegistDate"];   
-            
+            Item.transform.GetChild(2).GetComponent<Text>().text = node["data"][i]["roomBoardRegistDate"];
+            roomboardcode = node["data"][i]["roomBoardCode"];
+            print("룸보드 코드:" + roomboardcode);
 
             //content.text = node["data"][i]["roomBoardContent"];           
             //confirmTitle.text = node["data"][i]["roomBoardTitle"]; 
-           
+
             //SubboardManager.Instance.confirmWindow.transform.GetChild(1).GetComponent<Text>().text = node["data"][i]["roomBoardContent"];
             //Item.transform.GetChild(2).GetComponent<Text>().text = node["data"][i]["roomBoardRegistDate"];
             //SubboardManager.Instance.confirmWindow.transform.GetChild(3).GetComponent<Text>().text = node["data"][i]["likeCount"];
@@ -128,6 +145,9 @@ public class PressF : MonoBehaviour
             //SubboardClick confirmSet = Item.GetComponent<SubboardClick>();
             //confirmSet.Set(Item.transform.GetChild(0).GetComponent<InputField>().text, SubboardManager.Instance.confirmWindow.transform.GetChild(1).GetComponent<Text>().text, SubboardManager.Instance.confirmWindow.transform.GetChild(3).GetComponent<Text>().text, confirmWriting);
         }
+        
+
+
 
     }
 }
