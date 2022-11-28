@@ -31,6 +31,8 @@ public class SocketIoClient : MonoBehaviourPun
     void Start()
     {
         ChatNickname = LoginManager.Instance.playerData.memberNickname;
+
+        print("닉네임 : " + ChatNickname);
         //print("instance.nickname : " + ChatNickname);
 
         ws = new WebSocket("ws://3.34.133.115:8001");
@@ -85,7 +87,7 @@ public class SocketIoClient : MonoBehaviourPun
             print("inputChat : " + inputChat);
             print(inputChat.text);
 
-            var message = inputChat.text;
+            var message = ChatNickname + inputChat.text;
             // if (message != null)
             // {
             //     return;
@@ -121,7 +123,7 @@ public class SocketIoClient : MonoBehaviourPun
             // chatItem.SetText(chat);
             
             CAJ_ChatItem chatItem = item.GetComponent<CAJ_ChatItem>();
-            chatItem.SetText(message);
+            chatItem.SetText(ChatNickname + " : "+ message);
 
             //4. 이전에 바닥에 닿아있었다면
             //StartCoroutine(AutoScrollBottom());
@@ -180,7 +182,7 @@ public class SocketIoClient : MonoBehaviourPun
         // //                   PhotonNetwork.NickName + "</color>" + " : " + s;
         //
         // //1.글을 쓰다가 엔터를 치면
-        // photonView.RPC("RpcAddChat", RpcTarget.All, chatText);
+        //photonView.RPC("RpcAddChat", RpcTarget.All, chatText);
         //
         // //4. inputChat의 내용을 초기화
         // inputChat.text = "";

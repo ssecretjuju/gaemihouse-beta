@@ -92,12 +92,14 @@ public class LoginManager : MonoBehaviour
     {
         LoginInfo data = new LoginInfo();
         data.memberId = id.text;
-        print(id.text);
+        //print(id.text);
         data.memberPassword = password.text;
 
         HttpRequester requester = new HttpRequester();
         requester.url = "http://secretjujucicd-api-env.eba-iuvr5h2k.ap-northeast-2.elasticbeanstalk.com/member/id/" + id.text;
-        print(requester.url);
+        //requester.url = "http://secretjujucicd-api-env.eba-iuvr5h2k.ap-northeast-2.elasticbeanstalk.com/auth/login";
+        
+        //print(requester.url);
         requester.requestType = RequestType.GET;
 
         requester.postData = JsonUtility.ToJson(data, true);
@@ -116,11 +118,13 @@ public class LoginManager : MonoBehaviour
 
         print("data : " + data);
 
+
         ResponseData responseData = JsonUtility.FromJson<ResponseData>(data);
 
         playerData = responseData.data;
 
-        print(playerData.yield);
+        print("¹öÆ° ´­·¯Áü");
+        //print(playerData.yield);
 
 
         //PlayerPrefs.SetString("token", playerData.accessToken);
@@ -130,6 +134,9 @@ public class LoginManager : MonoBehaviour
         SceneManager.LoadScene("LYJ_CharacterSelection");
 
     }
+
+
+
 
 
     // Start is called before the first frame update

@@ -19,6 +19,10 @@ public class CAJ_LeaveLobby : MonoBehaviourPunCallbacks
 
     public void ClickLeaveLobby()
     {
-        PhotonNetwork.LeaveLobby();
+
+        //1. æ¿¿¸»Ø
+        PhotonNetwork.Disconnect();
+        PhotonNetwork.LoadLevel("[Beta]CAJ_LobbyScene");
+        //2. disconnect
     }
 }

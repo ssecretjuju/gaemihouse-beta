@@ -7,6 +7,9 @@ using UnityEngine.EventSystems;
 
 public class CAJ_ChatManager : MonoBehaviourPun
 {
+    //닉네임
+    public string ChatNickName;
+
     //ChatItme 공장
     public GameObject chatItemFactory;
     //InputChat 
@@ -27,48 +30,48 @@ public class CAJ_ChatManager : MonoBehaviourPun
     {
         //inputChat에서 엔터를 눌렀을 때 호출되는 함수 등록
         inputChat.onSubmit.AddListener(OnSubmit);
-        //커서를 안보이게!
-        //Cursor.visible = false;
-        
 
-        nickColor = new Color(
-            Random.Range(0.0f, 1.0f),
-            Random.Range(0.0f, 1.0f),
-            Random.Range(0.0f, 1.0f)
-       );
+        ChatNickName = LoginManager.Instance.playerData.memberNickname;
+
+        // nickColor = new Color(
+        //     Random.Range(0.0f, 1.0f),
+        //     Random.Range(0.0f, 1.0f),
+        //     Random.Range(0.0f, 1.0f)
+        //);
     }
 
     void Update()
     {
-        //esc키를 누르면 커서를 활성화
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            Cursor.visible = true;
-        }
+        ////esc키를 누르면 커서를 활성화
+        //if(Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    Cursor.visible = true;
+        //}
 
-        //어딘가를 클릭하면 커서를 활성화
-        if(Input.GetMouseButtonDown(0))
-        {
-            //만약에 커서가 UI에 없다면
-            if(EventSystem.current.IsPointerOverGameObject() == false)
-            {
-                Cursor.visible = false;
-            }
+        ////어딘가를 클릭하면 커서를 활성화
+        //if(Input.GetMouseButtonDown(0))
+        //{
+        //    //만약에 커서가 UI에 없다면
+        //    if(EventSystem.current.IsPointerOverGameObject() == false)
+        //    {
+        //        Cursor.visible = false;
+        //    }
 
             //모바일땐
             //if(EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId) == false)
             //{
             //}
 
-        }
+        //}
     }
 
     //inputChat에서 엔터를 눌렀을 때 호출되는 함수
     void OnSubmit(string s)
     {
         //<color=#FF0000>닉네임</color>
-        string chatText = "<color=#" + ColorUtility.ToHtmlStringRGB(nickColor) + ">" +
-            PhotonNetwork.NickName + "</color>" + " : " + s;
+        //string chatText = "<color=#" + ColorUtility.ToHtmlStringRGB(nickColor) + ">" +
+        //     + "</color>" + " : " + s;
+        string chatText = ChatNickName + " : " + s;
 
         //1.글을 쓰다가 엔터를 치면
         photonView.RPC("RpcAddChat", RpcTarget.All, chatText);
