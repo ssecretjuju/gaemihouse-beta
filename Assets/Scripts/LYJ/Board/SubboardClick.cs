@@ -11,6 +11,19 @@ using SimpleJSON;
 
 public class SubboardClick : MonoBehaviour
 {
+    public static SubboardClick Instance;
+
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
     public Text comfrimTitle;
     public Text comfrimContent;
     public Text likey;

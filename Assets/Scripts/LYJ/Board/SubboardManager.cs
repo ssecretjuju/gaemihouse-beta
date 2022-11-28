@@ -153,7 +153,7 @@ public class SubboardManager : MonoBehaviour
 
         string countNumber = count.ToString();
 
-        likeCountText.text = countNumber;
+        likeCountText.text = SubboardClick.Instance.subLikey;
 
         //서버로 좋아요 누른사람의 멤버 코드를 보낸다?
 
