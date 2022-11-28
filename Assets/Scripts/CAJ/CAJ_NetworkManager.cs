@@ -20,7 +20,8 @@ public class CAJ_NetworkManager : MonoBehaviour
 
     IEnumerator GetText()
     {
-        UnityWebRequest www = UnityWebRequest.Get("http://3.34.133.115:8080/member/code/1");
+        //UnityWebRequest www = UnityWebRequest.Get("http://3.34.133.115:8080/member/code/1");
+        UnityWebRequest www = UnityWebRequest.Get("http://secretjujucicd-api-env.eba-iuvr5h2k.ap-northeast-2.elasticbeanstalk.com/member/code/1");
         yield return www.SendWebRequest();
 
         if (www.isNetworkError || www.isHttpError)

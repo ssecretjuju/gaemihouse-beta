@@ -332,12 +332,9 @@ public class LobbyRoomList : MonoBehaviourPunCallbacks
         };
         print(roomOptions);
 
+       PhotonNetwork.JoinOrCreateRoom(clickRoomName, roomOptions, TypedLobby.Default);
+        //PhotonNetwork.JoinOrCreateRoom("HIHI", roomOptions, TypedLobby.Default);
 
-        print("joinorCreateRoom 완료");
-        Debug.Log("clickRoomName " + clickRoomName);
-        
-        PhotonNetwork.JoinOrCreateRoom("HIHI", roomOptions, TypedLobby.Default);
-        print("111111111111111");
         
         //내 닉네임 설정
         //PhotonNetwork.NickName = inputNickName.text;
@@ -352,9 +349,6 @@ public class LobbyRoomList : MonoBehaviourPunCallbacks
         print(System.Reflection.MethodBase.GetCurrentMethod().Name);
 
         //LobbyScene으로 이동
-        //PhotonNetwork.LoadLevel("CAJ_LobbyScene");
-        //PhotonNetwork.LoadLevel("CAJ_CreateScene");
-        //print("닉네임 : " + PhotonNetwork.NickName);]
     }
 
     //방 참가가 완료 되었을 때 호출 되는 함수
@@ -363,8 +357,7 @@ public class LobbyRoomList : MonoBehaviourPunCallbacks
         base.OnJoinedRoom();
         print("OnJoinedRoom");
         PhotonNetwork.LoadLevel("LYJ_RoomScene");
-        print("방 참가 완료, 방 이름 : " + PhotonNetwork.CurrentRoom.Name);
-        print("현재 방 인원 : " + PhotonNetwork.CurrentRoom.PlayerCount);
+        print("방 참가 완료, 방 이름 : " + PhotonNetwork.CurrentRoom.Name + "현재 방 인원 : " + PhotonNetwork.CurrentRoom.PlayerCount);
     }
 
     //방이 생성되면 호출 되는 함수
@@ -395,6 +388,8 @@ public class LobbyRoomList : MonoBehaviourPunCallbacks
         base.OnJoinRoomFailed(returnCode, message);
         print("OnJoinRoomFailed, " + returnCode + ", " + message);
     }
+
+
 
 }
 

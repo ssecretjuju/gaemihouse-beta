@@ -11,10 +11,14 @@ public class LobbyRoomItem : MonoBehaviour
     //방 제목
     public TMP_Text roomInfoTMP;
 
-
-
     //방 수익률
     public TMP_Text roomYieldTMP;
+
+    //방 키워드 
+    public TMP_Text roomKeywordTMP;
+
+    //방 멤버
+    public TMP_Text roomMemberTMP;
 
     //게임오브젝트의 이름을 roomName으로!
     public void SetInfoName(string roomName)
@@ -28,6 +32,16 @@ public class LobbyRoomItem : MonoBehaviour
     public void SetInfoYield(double roomYield)
     {
         roomYieldTMP.text = roomYield.ToString() + "%";
+    }
+
+    public void SetInfoKeyword(string keyword)
+    {
+        roomKeywordTMP.text = keyword;
+    }
+
+    public void SetInfoMember(string memberId)
+    {
+        roomMemberTMP.text = memberId;
     }
 
     //public void SetInfoYield(double roomYield)

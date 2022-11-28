@@ -109,9 +109,9 @@ public class PressF : MonoBehaviour
 
             GameObject Item = Instantiate(Subboard, boardItemParent);
             SubboardClick subboardClick = Item.GetComponent<SubboardClick>();
-            subboardClick.subContent = node["data"][i]["roomBoardContent"];
-            subboardClick.subLikey = node["data"][i]["likeCount"].ToString();
-            subboardClick.subTitle = node["data"][i]["roomBoardTitle"];
+            //subboardClick.subContent = node["data"][i]["roomBoardContent"];
+            //subboardClick.subLikey = node["data"][i]["likeCount"].ToString();
+            //subboardClick.subTitle = node["data"][i]["roomBoardTitle"];
 
             Item.transform.GetChild(0).GetComponent<InputField>().text = node["data"][i]["roomBoardTitle"];
             Item.transform.GetChild(1).GetComponent<Text>().text = node["data"][i]["memberNickname"];         

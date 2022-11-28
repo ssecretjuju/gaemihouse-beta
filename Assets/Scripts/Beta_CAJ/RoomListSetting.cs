@@ -7,6 +7,14 @@ using UnityEngine.Networking;
 using Photon.Pun;
 using Photon.Realtime;
 
+
+//(자동)서버에서 데이터 받아와서, 입장할 때 방 만들어주기
+//(클릭)방 생성
+//(클릭)방 입장 
+//(클릭)방 삭제
+
+
+//방 만들기
 [Serializable]
 public class roomPostInfo
 {
@@ -15,18 +23,44 @@ public class roomPostInfo
     public string memberId;
 }
 
+
+//방 삭제
 [Serializable]
 public class roomDeleteInfo
 {
     public string roomTitle;
 }
 
-//[Serializable]
-//public class roomHolderInfo
-//{
-//    public int memberCode;
-//}
 
+//방 만들 때, 방장 정보 ! 
+[Serializable]
+public class roomHolderInfo
+{
+    public int memberCode;
+}
+
+//방 가입할 때
+[Serializable]
+public class RoomJoinInfo
+{
+    public string roomTitle;
+    public string memberId;
+}
+
+//방 클릭했을 때 받는 데이터 (0, 1, -1)
+[Serializable]
+public class RoomEntranceInfo
+{
+    public int data;
+}
+
+//참여 가입 신청서 : 가입하겠다고 하면, 보내는 정보 
+[Serializable]
+public class RoomApplicationInfo
+{
+    public string roomTitle;
+    public string memberId;
+}
 
 public class RoomListSetting : MonoBehaviourPunCallbacks
 {
@@ -37,6 +71,16 @@ public class RoomListSetting : MonoBehaviourPunCallbacks
 
     //방생성 Button
     public Button btnCreate;
+
+
+    //방 가입누르고, 받는 코드 
+    public int entranceCode;
+
+    //가입 o시 뜨는 ui
+    public GameObject applicationUI;
+    //가입 x시 뜨는 ui
+    public GameObject NoUI;
+
 
 
     // Start is called before the first frame update
@@ -63,6 +107,7 @@ public class RoomListSetting : MonoBehaviourPunCallbacks
     }
 
 
+    //방 만들 때 보내는 정보
     public void PostRoomInfoClick()
     {
         roomPostInfo data = new roomPostInfo();
@@ -113,23 +158,17 @@ public class RoomListSetting : MonoBehaviourPunCallbacks
         //hash["desc"] = 0;
         //hash["password"] = float.Parse(inputReturn.text);
         roomOptions.CustomRoomProperties = hash;
-        // custom 정보를 공개하는 설정
-        // roomOptions.CustomRoomPropertiesForLobby = new string[] {
-        //     "desc", "map_id", "room_name", "password"
-        // };
+        // roomOptions.CustomRoomPropertiesForLobby = new string[] {"desc", "map_id", "room_name", "password"};
         roomOptions.CustomRoomPropertiesForLobby = new string[] {
-            "desc", "map_id", "room_name"
-        };
+            "desc", "map_id", "room_name"};
         print(roomOptions);
 
         // 방 생성 요청 (해당 옵션을 이용해서)
         print(2222222);
 
-        //OnClickConnect();
+        OnClickConnect();
 
-
-        //PhotonNetwork.CreateRoom(inputRoomName.text, roomOptions);
-        //print(PhotonNetwork.CurrentRoom.Name);
+        //아니면 clickroomjoin();
     }
 
     //마스터 서버 접속성공시 호출(Lobby에 진입할 수 없는 상태)
@@ -243,34 +282,33 @@ public class RoomListSetting : MonoBehaviourPunCallbacks
     }
 
     ////방 만들 때, 방장 정보를 넘겨주고 싶다.
-    //public void OnClickHolder()
-    //{
-    //    roomHolderInfo data = new roomHolderInfo();
-    //    data.memberCode = LoginManager.Instance.playerData.memberCode;
-    //    print(data.memberCode);
+    public void OnClickHolder()
+    {
+        roomHolderInfo data = new roomHolderInfo();
+        data.memberCode = LoginManager.Instance.playerData.memberCode;
+        print(data.memberCode);
 
-    //    HttpRequester requester = new HttpRequester();
+        HttpRequester requester = new HttpRequester();
 
-    //    requester.url = "http://secretjujucicd-api-env.eba-iuvr5h2k.ap-northeast-2.elasticbeanstalk.com/shareholder-room";
-    //    requester.requestType = RequestType.POST;
-
-
-    //    print("test");
-
-    //    requester.postData = JsonUtility.ToJson(data, true);
-    //    print(requester.postData);
+        requester.url = "http://secretjujucicd-api-env.eba-iuvr5h2k.ap-northeast-2.elasticbeanstalk.com/shareholder-room";
+        requester.requestType = RequestType.POST;
 
 
-    //    ///////////
-    //    requester.onComplete = OnCompleteHolder;
-    //    HttpManager.instance.SendRequest(requester);
-    //}
+        print("방장정보 보내기");
 
-    //public void OnCompleteHolder(DownloadHandler handler)
-    //{
-    //    print("회원정보 보내기 완료 ");
-    //}
+        requester.postData = JsonUtility.ToJson(data, true);
+        print(requester.postData);
 
+
+        ///////////
+        requester.onComplete = OnCompleteHolder;
+        HttpManager.instance.SendRequest(requester);
+    }
+
+    public void OnCompleteHolder(DownloadHandler handler)
+    {
+        print("방장정보 보내기 완료 ");
+    }
 
     public InputField roomName;
 

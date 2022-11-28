@@ -52,7 +52,8 @@ public class PredictBoardManager : MonoBehaviour
         data.searchText = searchText.text;
 
         HttpRequester requester = new HttpRequester();
-        requester.url = "http://3.34.133.115:8080/stock-prediction/" + searchText.text;
+        //requester.url = "http://3.34.133.115:8080/stock-prediction/" + searchText.text;
+        requester.url = "http://secretjujucicd-api-env.eba-iuvr5h2k.ap-northeast-2.elasticbeanstalk.com/stock-prediction/" + searchText.text;
         requester.requestType = RequestType.POST;
         print("test");
 

@@ -18,7 +18,8 @@ public class CAJ_LoadRoomManager : MonoBehaviour
         HttpRequester requester = new HttpRequester();
 
         //shareholder-room , GET
-        requester.url = "http://3.34.133.115:8080/shareholder-room";
+        //requester.url = "http://3.34.133.115:8080/shareholder-room";
+        requester.url = "http://secretjujucicd-api-env.eba-iuvr5h2k.ap-northeast-2.elasticbeanstalk.com/shareholder-room";
         requester.requestType = RequestType.GET;
         requester.onComplete = OnCompleteGetPost;
         //requester.onComplete(UnityWebRequest.downloadHandler)
