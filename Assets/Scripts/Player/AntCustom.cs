@@ -43,7 +43,7 @@ public class AntCustom : MonoBehaviour
     void Start()
     {
 
-        if (SceneManager.GetActiveScene().name == "[Beta]CAJ_LobbyScene")
+        if (SceneManager.GetActiveScene().name == "[Beta]LYJ_LobbyScene")
         {
             //CustomCanvas.SetActive(false);
             print("·Îºñ¾À");

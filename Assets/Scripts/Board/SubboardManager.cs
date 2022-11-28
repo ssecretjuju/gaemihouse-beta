@@ -48,6 +48,7 @@ public class SubboardManager : MonoBehaviour
     public GameObject Subboard;
     public Transform boardItemParent;
     public GameObject SubboardCanvas;
+    public GameObject SubboardParent;
     
 
     public Text confirmTitleText;
@@ -133,6 +134,7 @@ public class SubboardManager : MonoBehaviour
         if (inputTitle.text != null && inputContent.text != null)
         {
             SubwriteWindow.SetActive(false);
+            SubboardParent.SetActive(true);
 
         }
 
@@ -166,8 +168,13 @@ public class SubboardManager : MonoBehaviour
 
     public void OnEscBtn()
     {
-        SubboardCanvas.SetActive(false);
+        SubboardParent.SetActive(false);
 
     }
 
+    public void OnEsc2Btn()
+    {
+        confirmWindow.SetActive(false);
+        SubboardParent.SetActive(true);
+    }
 }
