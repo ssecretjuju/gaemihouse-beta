@@ -129,4 +129,9 @@ KeyCode.Alpha9,
         imo.transform.parent = gameObject.transform;
 
     }
+
+    public void RpcAnim()
+    {
+
+    }
 }

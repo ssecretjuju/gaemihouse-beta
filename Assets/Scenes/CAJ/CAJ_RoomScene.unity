@@ -212,6 +212,7 @@ GameObject:
   m_Component:
   - component: {fileID: 49066889}
   - component: {fileID: 49066890}
+  - component: {fileID: 49066891}
   m_Layer: 0
   m_Name: WebSocket
   m_TagString: Untagged
@@ -249,6 +250,22 @@ MonoBehaviour:
   chatLog: {fileID: 814774953}
   input: {fileID: 68555375}
   IP: ws://3.34.133.115:8001
+--- !u!114 &49066891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49066888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e83406f1237bc4785399a82a734e5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chatItemFactory: {fileID: 0}
+  inputChat: {fileID: 0}
+  trContent: {fileID: 0}
+  rtScrollView: {fileID: 0}
 --- !u!1 &68555373
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,6 +471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 236317215b350134ab1cde4e3bf7c50c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerPos: {fileID: 0}
 --- !u!1 &201999120
 GameObject:
   m_ObjectHideFlags: 0
@@ -1945,7 +1963,7 @@ RectTransform:
   - {fileID: 1493864571}
   - {fileID: 2126383273}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2757,7 +2775,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1139078232
 MonoBehaviour:
@@ -4119,6 +4137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20ff395231b1c7f418225f3493e4f042, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ChatNickName: 
   chatItemFactory: {fileID: 5188808548922973885, guid: ee525fb6ca7258c408450015a3e88a6b, type: 3}
   inputChat: {fileID: 68555375}
   trContent: {fileID: 25933536}
@@ -4187,7 +4206,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1784307205}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: RoomReturnUpdate, Assembly-CSharp
         m_MethodName: ReturnChange
         m_Mode: 1
@@ -5058,52 +5077,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1770313289}
   m_CullTransparentMesh: 1
---- !u!1 &1784307204
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1784307206}
-  - component: {fileID: 1784307205}
-  m_Layer: 0
-  m_Name: roomreturnupdate
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1784307205
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1784307204}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d61ac16aad5b63c44b36e49506e7a7f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ReturnInput: {fileID: 1333684801}
-  ReturnBtn: {fileID: 1461821564}
---- !u!4 &1784307206
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1784307204}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1740.2532, y: 1017.63885, z: 98.40787}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 16
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1790815136
 GameObject:
   m_ObjectHideFlags: 0
@@ -5547,7 +5520,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2007341314
 GameObject:
@@ -6214,7 +6187,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit

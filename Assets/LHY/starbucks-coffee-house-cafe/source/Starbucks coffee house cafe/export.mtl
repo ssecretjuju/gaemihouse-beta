@@ -1,0 +1,599 @@
+# File produced by Open Asset Import Library (http://www.assimp.sf.net)
+# (assimp v4.1.262400)
+
+newmtl enduit_004_Room_Entity_Material
+Kd 1 1 1
+Ks 0 0 0
+d 1
+Ns 0.2000000029802322
+illum 2
+map_Kd enduit_004.jpg
+
+newmtl blanc_001_Room_Entity_Material
+Kd 1 1 1
+Ks 0 0 0
+d 1
+Ns 0.2000000029802322
+illum 2
+
+newmtl metal_004_ovcolacacaccolpic12contpic02_Room_Entity_Material
+Kd 1 1 1
+Ks 0 0 0
+d 1
+Ns 0.2000000029802322
+illum 2
+map_Kd metal_004.jpg
+
+newmtl metal_004_Room_Entity_Material
+Kd 1 1 1
+Ks 0 0 0
+d 1
+Ns 0.2000000029802322
+illum 2
+map_Kd metal_004.jpg
+
+newmtl ground_herbe_2_Room_Entity_Material
+Kd 1 1 1
+Ks 0 0 0
+d 1
+Ns 0.2000000029802322
+illum 2
+map_Kd ground_herbe_2.jpg
+
+newmtl vinyle_007_Room_Entity_Material
+Kd 1 1 1
+Ks 0 0 0
+d 1
+Ns 0.2000000029802322
+illum 2
+map_Kd vinyle_007.jpg
+
+newmtl tex_terreau_Room_Entity_Material
+Kd 1 1 1
+Ks 0 0 0
+d 1
+Ns 0.2000000029802322
+illum 2
+map_Kd tex_terreau.jpg
+
+newmtl bitume_001_Room_Entity_Material
+Kd 1 1 1
+Ks 0 0 0
+d 1
+Ns 0.2000000029802322
+illum 2
+map_Kd bitume_001.jpg
+
+newmtl carrelage_054_Room_Entity_Material
+Kd 1 1 1
+Ks 0 0 0
+d 1
+Ns 0.2000000029802322
+illum 2
+map_Kd carrelage_054.jpg
+
+newmtl lambris_ext_005
+Kd 1 1 1
+Ks 0 0 0
+d 1
+Ns 0.2000000029802322
+illum 2
+map_Kd lambris_ext_005.jpg
+
+newmtl gris_006
+Kd 0.1333333402872086 0.1372549086809158 0.1568627506494522
+Ks 0 0 0
+d 1
+Ns 0.2000000029802322
+illum 2
+
+newmtl gris_004
+Kd 0.2470588237047195 0.2470588237047195 0.2470588237047195
+Ks 0 0 0
+d 1
+Ns 0.2000000029802322
+illum 2
+
+newmtl fenetre_029______phong1sg6
+Kd 0.9960780143737793 0.9960780143737793 0.9960780143737793
+Ks 0 0 0
+d 0.3019610047340393
+illum 1
+
+newmtl 20200801-2265-cest
+Kd 1 1 1
+Ks 0 0 0
+d 1
+illum 1
+map_Kd 20200801-2265-cest.jpg
+
+newmtl pierres_011_ovcol3e3021colpic05contpic08
+Kd 1 1 1
+Ks 0 0 0
+d 1
+Ns 0.2000000029802322
+illum 2
+map_Kd pierres_011.jpg
+
+newmtl 20200801-191228-cest
+Kd 1 1 1
+Ks 0 0 0
+d 1
+illum 1
+map_Kd 20200801-191228-cest.jpg
+
+newmtl porte_022____mat_metalbasique001sg
+Kd 0.2899999916553497 0.2899999916553497 0.2899999916553497
+Ks 0.5 0.5 0.5
+d 1
+Ns 1.482202053070068
+illum 2
+
+newmtl porte_022___mat_vitresg
+Kd 0.9960780143737793 0.9960780143737793 0.9960780143737793
+Ks 0.5 0.5 0.5
+d 0.3019610047340393
+Ns 1.482202053070068
+illum 2
+
+newmtl bois_102
+Kd 1 1 1
+Ks 0 0 0
+d 1
+Ns 0.2000000029802322
+illum 2
+map_Kd bois_102.jpg
+
+newmtl kitchen_classic_style_base_cabinet_008___phong2sg
+Kd 0.6156859993934631 0.6156859993934631 0.6156859993934631
+Ks 0.1000000014901161 0.1000000014901161 0.1000000014901161
+d 1
+Ns 1
+illum 2
+
+newmtl bois_055
+Kd 1 1 1
+Ks 0 0 0
+d 1
+Ns 0.2000000029802322
+illum 2
+map_Kd bois_055.jpg
+
+newmtl parquet_034
+Kd 1 1 1
+Ks 0 0 0
+d 1
+Ns 0.2000000029802322
+illum 2
+map_Kd parquet_034.jpg
+
+newmtl texture_eau_piscine_ovcolffffffcolpic12contpic05
+Kd 1 1 1
+Ks 0 0 0
+d 1
+Ns 0.2000000029802322
+illum 2
+map_Kd texture_eau_piscine.pngmap_d texture_eau_piscine.png
+
+
+newmtl pmu_caisse_enregistreuse_002___lambert16sg
+Kd 1 1 1
+Ks 0 0 0
+d 1
+illum 1
+
+newmtl pmu_caisse_enregistreuse_002___lambert17sg
+Kd 1 1 1
+Ks 0 0 0
+d 1
+illum 1
+map_Kd clavier.jpg
+
+newmtl pmu_caisse_enregistreuse_002___lambert18sg
+Kd 1 1 1
+Ks 0 0 0
+d 1
+illum 1
+map_Kd oven_003.jpg
+
+newmtl pmu_caisse_enregistreuse_002___lambert19sg
+Kd 0.1500000059604645 0.1500000059604645 0.1500000059604645
+Ks 0 0 0
+d 1
+illum 1
+
+newmtl blanc_001
+Kd 1 1 1
+Ks 0 0 0
+d 1
+Ns 0.2000000029802322
+illum 2
+
+newmtl pmu_caisse_enregistreuse_002___phong1sg
+Kd 1 1 1
+Ks 0.1099999994039536 0.1099999994039536 0.1099999994039536
+d 1
+Ns 1
+illum 2
+map_Kd metal_004.jpg
+
+newmtl cuisine_rangement_003___blancbouteille
+Kd 1 1 1
+Ks 0 0 0
+d 1
+illum 1
+
+newmtl cuisine_rangement_003___rougebouteille
+Kd 0.4862749874591827 0.09019599854946136 0.1450980007648468
+Ks 0 0 0
+d 1
+illum 1
+
+newmtl tex_alu2
+Kd 1 1 1
+Ks 0 0 0
+d 1
+Ns 0.2000000029802322
+illum 2
+map_Kd tex_alu2.jpg
+
+newmtl refrigerateur_008______mat_metalbasique002sg
+Kd 0.8199999928474426 0.8199999928474426 0.8199999928474426
+Ks 0 0 0
+d 1
+illum 1
+
+newmtl refrigerateur_008_____matbasehd3d1sg
+Kd 0.05000000074505806 0.05000000074505806 0.05000000074505806
+Ks 0 0 0
+d 1
+illum 1
+
+newmtl refrigerateur_008___mat_bleusg
+Kd 0 0.5799999833106995 0.05999999865889549
+Ks 0 0 0
+d 1
+illum 1
+
+newmtl refrigerateur_008___mat_bleusg1
+Kd 0 0.25 0.5
+Ks 0 0 0
+d 1
+illum 1
+
+newmtl refrigerateur_008___mat_jauneorsg
+Kd 0.3600000143051147 0.25 0.119999997317791
+Ks 0 0 0
+d 1
+illum 1
+
+newmtl refrigerateur_008___mat_metalbasique005sg
+Kd 0.009999999776482582 0 0
+Ks 0 0 0
+d 1
+illum 1
+
+newmtl refrigerateur_008___mat_rougphongsg
+Kd 1 0 0
+Ks 0 0 0
+d 1
+illum 1
+
+newmtl refrigerateur_008___mat_vitresg
+Kd 0.9960780143737793 0.9960780143737793 0.9960780143737793
+Ks 0 0 0
+d 0.3019610047340393
+illum 1
+
+newmtl refrigerateur_008___matbasehd3d1sg
+Kd 1 1 1
+Ks 0 0 0
+d 1
+illum 1
+
+newmtl 20200801-214921-cest
+Kd 1 1 1
+Ks 0 0 0
+d 1
+illum 1
+map_Kd 20200801-214921-cest.jpg
+
+newmtl blanc_001_ovcolbfbfbfcolpic12contpic03
+Kd 1 1 1
+Ks 0 0 0
+d 1
+Ns 0.2000000029802322
+illum 2
+
+newmtl 20200801-214916-cest
+Kd 1 1 1
+Ks 0 0 0
+d 1
+illum 1
+map_Kd 20200801-214916-cest.jpg
+
+newmtl gris_002_ovcol3e3021colpic05contpic08
+Kd 0.4235294163227081 0.4235294163227081 0.4235294163227081
+Ks 0 0 0
+d 1
+Ns 0.2000000029802322
+illum 2
+
+newmtl scan_luminaire_001_bois003___metal_chormer2
+Kd 0.09477239847183228 0.09477239847183228 0.09477239847183228
+Ks 0.496504008769989 0.496504008769989 0.496504008769989
+d 1
+Ns 7
+illum 2
+
+newmtl scan_luminaire_001_bois003___phong21sg4
+Kd 0.919996976852417 0.919996976852417 0.919996976852417
+Ks 0.07999999821186066 0.07999999821186066 0.07999999821186066
+d 1
+Ns 1
+illum 2
+map_Kd metal_004.jpg
+
+newmtl scan_luminaire_001_bois003___phong22sg3
+Kd 0.2800000011920929 0.2560000121593475 0.2560000121593475
+Ks 0.2300000041723251 0.2099999934434891 0.2000000029802322
+d 1
+Ns 1
+illum 2
+
+newmtl scan_luminaire_001_bois003___phong30sg3
+Kd 0.8200049996376038 0.6464329957962036 0.2992900013923645
+Ks 1 1 1
+d 0.4895089864730835
+Ns 3
+illum 2
+
+newmtl lustre_003___lustre_003_blinn1sg
+Kd 1 1 1
+Ks 1 1 1
+d 1
+illum 1
+
+newmtl lustre_003___lustre_003_phong1sg
+Kd 0.5843139886856079 0.5843139886856079 0.5843139886856079
+Ks 1 1 1
+d 1
+illum 1
+
+newmtl lustre_003___lustre_003_phong2sg
+Kd 0.9960780143737793 0.9960780143737793 0.9960780143737793
+Ks 1 1 1
+d 0.3019610047340393
+illum 1
+
+newmtl gris_002
+Kd 0.4235294163227081 0.4235294163227081 0.4235294163227081
+Ks 0 0 0
+d 1
+Ns 0.2000000029802322
+illum 2
+
+newmtl porte_005___p
+Kd 0.5843139886856079 0.5843139886856079 0.5843139886856079
+Ks 0 0 0
+d 1
+illum 1
+
+newmtl bitume_001
+Kd 1 1 1
+Ks 0 0 0
+d 1
+Ns 0.2000000029802322
+illum 2
+map_Kd bitume_001.jpg
+
+newmtl tex_bois_scan_blanc_002
+Kd 1 1 1
+Ks 0 0 0
+d 1
+Ns 0.2000000029802322
+illum 2
+map_Kd tex_bois_scan_blanc_002.jpg
+
+newmtl kitchen_classic_style_base_cabinet_oven_003___lambert8sg
+Kd 1 1 1
+Ks 0 0 0
+d 1
+illum 1
+map_Kd oven_007.jpg
+
+newmtl kitchen_classic_style_base_cabinet_oven_003___phong5sg
+Kd 0.7607839703559875 0.7607839703559875 0.7607839703559875
+Ks 0.5 0.5 0.5
+d 1
+Ns 1
+illum 2
+
+newmtl kitchen_classic_style_base_cabinet_oven_003___phong7sg
+Kd 0.137254998087883 0.137254998087883 0.137254998087883
+Ks 0.05000000074505806 0.05000000074505806 0.05000000074505806
+d 1
+Ns 1
+illum 2
+
+newmtl kitchen_classic_style_base_cabinet_oven_003___vitre
+Kd 0.9960780143737793 0.9960780143737793 0.9960780143737793
+Ks 0.009999999776482582 0.009999999776482582 0.009999999776482582
+d 0.3019610047340393
+Ns 1
+illum 2
+
+newmtl kitchen_classic_style_base_corner_000___phong2sg
+Kd 0.6156859993934631 0.6156859993934631 0.6156859993934631
+Ks 0.1000000014901161 0.1000000014901161 0.1000000014901161
+d 1
+Ns 1
+illum 2
+
+newmtl kitchen_classic_style_base_cabinet_017___phong2sg
+Kd 0.6156859993934631 0.6156859993934631 0.6156859993934631
+Ks 0.1000000014901161 0.1000000014901161 0.1000000014901161
+d 1
+Ns 1
+illum 2
+
+newmtl refrigerateur_006____refrigerateur_006_refrigerateur_006_refrigerateur_006metal
+Kd 1 1 1
+Ks 0 0 0
+d 1
+Ns 0.699999988079071
+illum 2
+map_Kd metal_004.jpg
+
+newmtl refrigerateur_006____refrigerateur_006_refrigerateur_006_refrigerateur_006glacon
+Kd 1 1 1
+Ks 0 0 0
+d 1
+illum 1
+map_Kd electromenager.jpg
+
+newmtl refrigerateur_006____refrigerateur_006_refrigerateur_006_refrigerateur_006porte
+Kd 1 1 1
+Ks 0 0 0
+d 1
+illum 1
+map_Kd frigo_porte.jpg
+
+newmtl kitchen_classic_style_extractor_000___phong4sg
+Kd 1 1 1
+Ks 0.07999999821186066 0.07999999821186066 0.07999999821186066
+d 1
+Ns 1
+illum 2
+map_Kd stainless__brushed_000.jpg
+
+newmtl kitchen_classic_style_extractor_000___phong5sg
+Kd 0.7607839703559875 0.7607839703559875 0.7607839703559875
+Ks 0.5 0.5 0.5
+d 1
+Ns 1
+illum 2
+
+newmtl kitchen_classic_style_extractor_000___phong6sg
+Kd 0.2156859934329987 0.2156859934329987 0.2156859934329987
+Ks 0.5 0.5 0.5
+d 1
+Ns 1
+illum 2
+
+newmtl kitchen_classic_style_extractor_000___phong7sg
+Kd 0.137254998087883 0.137254998087883 0.137254998087883
+Ks 0.05000000074505806 0.05000000074505806 0.05000000074505806
+d 1
+Ns 1
+illum 2
+
+newmtl ground_sable
+Kd 1 1 1
+Ks 0 0 0
+d 1
+Ns 0.2000000029802322
+illum 2
+map_Kd ground_sable.jpg
+
+newmtl ground_sable_Wall_Entity_Material
+Kd 1 1 1
+Ks 0 0 0
+d 1
+Ns 0.2000000029802322
+illum 2
+map_Kd ground_sable.jpg
+
+newmtl gris_002_Wall_Entity_Material
+Kd 0.4235294163227081 0.4235294163227081 0.4235294163227081
+Ks 0 0 0
+d 1
+Ns 0.2000000029802322
+illum 2
+
+newmtl enduit_004_Wall_Entity_Material
+Kd 1 1 1
+Ks 0 0 0
+d 1
+Ns 0.2000000029802322
+illum 2
+map_Kd enduit_004.jpg
+
+newmtl blanc_001_Wall_Entity_Material
+Kd 1 1 1
+Ks 0 0 0
+d 1
+Ns 0.2000000029802322
+illum 2
+
+newmtl beige_006_Wall_Entity_Material
+Kd 0.9098039269447327 0.9098039269447327 0.8784313797950745
+Ks 0 0 0
+d 1
+Ns 0.2000000029802322
+illum 2
+
+newmtl carrelage_053_Wall_Entity_Material
+Kd 1 1 1
+Ks 0 0 0
+d 1
+Ns 0.2000000029802322
+illum 2
+map_Kd carrelage_053.jpg
+
+newmtl pierres_011_ovcol3e3021colpic05contpic08_Wall_Entity_Material
+Kd 1 1 1
+Ks 0 0 0
+d 1
+Ns 0.2000000029802322
+illum 2
+map_Kd pierres_011.jpg
+
+newmtl lave_mains_001___lave_mains_001_blinn1sg
+Kd 1 1 1
+Ks 0.5 0.5 0.5
+d 1
+illum 1
+
+newmtl lave_mains_001___lave_mains_001_blinn3sg
+Kd 0.4235289990901947 0.4235289990901947 0.4235289990901947
+Ks 0.75 0.75 0.75
+d 1
+illum 1
+
+newmtl lave_mains_001___lave_mains_001_blinn4sg
+Kd 0 0 0
+Ks 0.5 0.5 0.5
+d 1
+illum 1
+
+newmtl wc_005____base
+Kd 1 1 1
+Ks 0 0 0
+d 1
+Ns 0.2899999916553497
+illum 2
+
+newmtl wc_005____couvercle
+Kd 1 1 1
+Ks 0 0 0
+d 1
+Ns 0.2899999916553497
+illum 2
+
+newmtl wc_005____interupteur
+Kd 1 1 1
+Ks 0 0 0
+d 1
+Ns 0.3199999928474426
+illum 2
+map_Kd metal_011.jpg
+
+newmtl mirror.nocompress
+Kd 1 1 1
+Ks 0 0 0
+d 1
+Ns 0.2000000029802322
+illum 2
+map_Kd mirror.nocompress.png
+

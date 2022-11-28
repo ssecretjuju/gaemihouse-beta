@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using WebSocketSharp;
@@ -6,6 +8,7 @@ using Photon.Pun;
 using UnityEngine.EventSystems;
 
 using System.Text;
+
 using Unity.VisualScripting;
 
 public class SocketIoClient : MonoBehaviourPun
@@ -22,12 +25,14 @@ public class SocketIoClient : MonoBehaviourPun
 
 
 
-
+    
     //public RectTransform rtScrollView;
     float prevContentH;
     
     private WebSocket ws;
-    
+
+    public string hi;
+
     void Start()
     {
         ChatNickname = LoginManager.Instance.playerData.memberNickname;
@@ -48,6 +53,7 @@ public class SocketIoClient : MonoBehaviourPun
         ws.OnMessage += (res, e) => {
             //Debug.Log($"{e.Data}가 옴.");
             Debug.Log($"{e.Data}");
+            hi =  e.Data ;
             //Debug.Log(e.Data);
         };
 
@@ -63,6 +69,7 @@ public class SocketIoClient : MonoBehaviourPun
 
     void OnSubmit(string s)
     {
+        
         //1. 글을 쓰다가 엔터를 치면
         //2. ChatItem을 하나 만든다. (부모 : ScrollView - Content)
         GameObject item = Instantiate(chatItemFactory, trContent);
@@ -111,6 +118,7 @@ public class SocketIoClient : MonoBehaviourPun
         void RpcAddChat(string message)
         {
             //이전 content의 H값을 저장하자
+            message = hi;
             prevContentH = trContent.sizeDelta.y;
 
             //2.ChatItem을 하나 만든다. 
@@ -119,31 +127,31 @@ public class SocketIoClient : MonoBehaviourPun
 
             //3.text 컴포넌트 가져와서 inputField의
             //내용을 셋팅
-            // ChatItem chatItem = item.GetComponent<ChatItem>();
-            // chatItem.SetText(chat);
+            //ChatItem chatItem = item.GetComponent<ChatItem>();
+            //chatItem.SetText(chat);
             
             CAJ_ChatItem chatItem = item.GetComponent<CAJ_ChatItem>();
             chatItem.SetText(ChatNickname + " : "+ message);
-
+            
             //4. 이전에 바닥에 닿아있었다면
             //StartCoroutine(AutoScrollBottom());
         }
-        
-        // IEnumerator AutoScrollBottom()
-        // {
-        //     yield return null;
-        //     //스크롤뷰 H보다 Content H값이 클 때만(스크롤이 가능한 상태라면)
-        //     if(trContent.sizeDelta.y > rtScrollView.sizeDelta.y)
-        //     {            
-        //         //(content y  >= 변경되기전 content H - 스크롤뷰 H)
-        //         if (trContent.anchoredPosition.y >= prevContentH - rtScrollView.sizeDelta.y)
-        //         {
-        //             //5. 추가된 높이만큼 content y값을 변경하겠다.
-        //             trContent.anchoredPosition = new Vector2(0, trContent.sizeDelta.y - rtScrollView.sizeDelta.y);
-        //         }
-        //     }
-        // }
-        
+
+        //IEnumerator AutoScrollBottom()
+        //{
+        //    yield return null;
+        //    //스크롤뷰 H보다 Content H값이 클 때만(스크롤이 가능한 상태라면)
+        //    if (trContent.sizeDelta.y > rtScrollView.sizeDelta.y)
+        //    {
+        //        //(content y  >= 변경되기전 content H - 스크롤뷰 H)
+        //        if (trContent.anchoredPosition.y >= prevContentH - rtScrollView.sizeDelta.y)
+        //        {
+        //            //5. 추가된 높이만큼 content y값을 변경하겠다.
+        //            trContent.anchoredPosition = new Vector2(0, trContent.sizeDelta.y - rtScrollView.sizeDelta.y);
+        //        }
+        //    }
+        //}
+
         //inputChat에서 엔터를 눌렀을 때 호출되는 함수
         // void OnSubmit(string s)
         // {
@@ -174,7 +182,6 @@ public class SocketIoClient : MonoBehaviourPun
         //     inputChat.text = "";
         //     inputChat.ActivateInputField();
 
-        //이건 일단 다음! 
 
         // string chatText = PhotonNetwork.NickName + " : " + s;
         // //<color=#FF0000>닉네임</color>
@@ -191,6 +198,6 @@ public class SocketIoClient : MonoBehaviourPun
         // inputChat.ActivateInputField();
 
     }
-    
-    
+
+
 }

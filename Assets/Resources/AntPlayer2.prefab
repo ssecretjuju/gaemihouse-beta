@@ -2167,6 +2167,21 @@ MonoBehaviour:
   - Type: 4
     SynchronizeType: 0
     Name: isHappy
+  - Type: 4
+    SynchronizeType: 0
+    Name: isSad
+  - Type: 4
+    SynchronizeType: 0
+    Name: isVictory
+  - Type: 4
+    SynchronizeType: 0
+    Name: isClap
+  - Type: 4
+    SynchronizeType: 0
+    Name: isAngry
+  - Type: 4
+    SynchronizeType: 0
+    Name: isPray
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0
@@ -27986,6 +28001,8 @@ GameObject:
   - component: {fileID: 9186743407952963211}
   - component: {fileID: 972718046881294098}
   - component: {fileID: 3021146654090450656}
+  - component: {fileID: 8581158690396911981}
+  - component: {fileID: 2283335598310139230}
   m_Layer: 0
   m_Name: AntPlayer2
   m_TagString: Player
@@ -28117,6 +28134,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 972718046881294098}
+  - {fileID: 8581158690396911981}
   - {fileID: 5392229343278377436}
   sceneViewId: 0
   InstantiationId: 0
@@ -28151,6 +28169,65 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 25
   rotationSpeed: 200
+--- !u!114 &8581158690396911981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6636056912409685273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 4
+    SynchronizeType: 0
+    Name: isWalk
+  - Type: 4
+    SynchronizeType: 0
+    Name: isHappy
+  - Type: 4
+    SynchronizeType: 0
+    Name: isSad
+  - Type: 4
+    SynchronizeType: 0
+    Name: isVictory
+  - Type: 4
+    SynchronizeType: 0
+    Name: isClap
+  - Type: 4
+    SynchronizeType: 0
+    Name: isAngry
+  - Type: 4
+    SynchronizeType: 0
+    Name: isPray
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
+--- !u!95 &2283335598310139230
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6636056912409685273}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 3ec4057c1db16ad45b38e6df064ff451, type: 2}
+  m_Controller: {fileID: 9100000, guid: 202d5bb85fe9f6840849599333ed728b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6636056912447044551
 GameObject:
   m_ObjectHideFlags: 0

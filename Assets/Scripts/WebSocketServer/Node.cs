@@ -8,49 +8,42 @@ using UnityEngine.UI;
 using WebSocketSharp;
 
 using System.Text;
-using Photon.Pun;
+
 
 
 public class Node : MonoBehaviour
 {
 
-    public Text chatLog;    
+    public Text chatLog;
     public InputField input;
     string chatters;
     ScrollRect scroll_rect;
     string temp;
     public WebSocket ws;//소켓 선언
-    //string mbti_name;
+    string mbti_name;
 
-
-    // [Header("캐릭터의 MBTI 이름")]
-    // public Text name;
 
     [Header("IP입력_ PORT : 3333")]
     public string IP = "ws://3.34.133.115:8001";
-    
+
+
     void Start()
     {
         scroll_rect = GameObject.FindObjectOfType<ScrollRect>();
-        
-        ws = new WebSocket("ws://3.34.133.115:8001");
-        //서버에 연결! 
-        ws.Connect();
-        
-        //ws = new WebSocket(IP);// 127.0.0.1은 본인의 아이피 주소이다. 3333포트로 연결한다는 의미이다.
-        //ws.OnMessage += ws_OnMessage; //서버에서 유니티 쪽으로 메세지가 올 경우 실행할 함수를 등록한다.
-        //ws.OnOpen += ws_OnOpen;//서버가 연결된 경우 실행할 함수를 등록한다
-        //ws.OnClose += ws_OnClose;//서버가 닫힌 경우 실행할 함수를 등록한다.
-        //ws.Connect();//서버에 연결한다.
+
+        ws = new WebSocket(IP);// 127.0.0.1은 본인의 아이피 주소이다. 3333포트로 연결한다는 의미이다.
+        ws.OnMessage += ws_OnMessage; //서버에서 유니티 쪽으로 메세지가 올 경우 실행할 함수를 등록한다.
+        ws.OnOpen += ws_OnOpen;//서버가 연결된 경우 실행할 함수를 등록한다
+        ws.OnClose += ws_OnClose;//서버가 닫힌 경우 실행할 함수를 등록한다.
+        ws.Connect();//서버에 연결한다.
         //ws.Send("Hello I'm Json");//서버에게 "hello"라는 메세지를 보낸다.
 
 
-        // // 시작할 때, 저장된 값을 불러와서
-        // //mbti_name = PlayerPrefs.GetString("MBTI", "MBTI");
-        // mbti_name = PhotonNetwork.NickName;
-        //
-        // // 받은 키 벨류로 name에 넣는다
-        // name.text = mbti_name;
+        // 시작할 때, 저장된 값을 불러와서
+        //mbti_name = PlayerPrefs.GetString("MBTI", "MBTI");
+
+        // 받은 키 벨류로 name에 넣는다
+        //name.text = mbti_name;
 
     }
     void ws_OnMessage(object sender, MessageEventArgs e)
@@ -70,14 +63,14 @@ public class Node : MonoBehaviour
 
 
     }
-    //void ws_OnOpen(object sender, System.EventArgs e)
-    //{
-    //    Debug.Log("open"); //디버그 콘솔에 "open"이라고 찍는다.
-    //}
-    //void ws_OnClose(object sender, CloseEventArgs e)
-    //{
-    //    Debug.Log("close"); //디버그 콘솔에 "close"이라고 찍는다.
-    //}
+    void ws_OnOpen(object sender, System.EventArgs e)
+    {
+        Debug.Log("open"); //디버그 콘솔에 "open"이라고 찍는다.
+    }
+    void ws_OnClose(object sender, CloseEventArgs e)
+    {
+        Debug.Log("close"); //디버그 콘솔에 "close"이라고 찍는다.
+    }
 
     private void Update()
     {
@@ -107,45 +100,27 @@ public class Node : MonoBehaviour
 
             input.ActivateInputField();
 
+            var message = input.text;
+
             // Message 를 보낼 때
             // 이름이랑 같이 보낸다
-            //ws.Send(string.Format("{0} : {1}",mbti_name, input.text ) );
-            // ws.Send(string.Format(input.text));
-            //
-            // print("1");
-            //
-            // // text 에 나오게 하고싶다.
-            // //chatLog.text += input.text + "\n";
-            //
-            // print("2");
-            //
-            // // 그리고 초기화
-            // input.text = "";
-            //
-            // print("3");
-            //send : 입력 보내는 것 
-            //ws.Send(PhotonNetwork.NickName + "%" + input.text);
-            
-            
-            //var message = input.text;
-            //
-            // //send : 입력 보내는 것 
-            // ws.Send(string.Format(message));
-            //
-            // input.text = "";
-            //
-            // input.ActivateInputField();
-            //
-            //
-            ws.Send(PhotonNetwork.NickName + "%" + input.text);
-            chatLog.text += input.text + "\n";
+            //ws.Send(string.Format("{0} : {1}","NickName", message ) );
+            //ws.Send(string.Format("{0} : {1}","NickName", message ) );
+            ws.Send("%" + message);
 
+            print("1");
+
+            // text 에 나오게 하고싶다.
+            //chatLog.text += input.text + "\n";
+
+            print("2");
+
+            // 그리고 초기화
             input.text = "";
-            
-            input.ActivateInputField();
+
+            print("3");
 
 
-            
             // 스크롤 제어
             scroll_rect.verticalNormalizedPosition = 0.0f;
 

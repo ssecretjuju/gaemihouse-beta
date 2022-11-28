@@ -2057,6 +2057,8 @@ MonoBehaviour:
   popUpImage: {fileID: 0}
   subboardinfo: 
   confirmWriting: {fileID: 370025225}
+  boardmembercode: 0
+  roomboardcode: 0
 --- !u!65 &347426722
 BoxCollider:
   m_ObjectHideFlags: 0
