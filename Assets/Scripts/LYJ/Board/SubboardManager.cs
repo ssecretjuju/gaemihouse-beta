@@ -156,7 +156,6 @@ public class SubboardManager : MonoBehaviour
 
         //서버로 좋아요 누른사람의 멤버 코드를 보낸다?
 
-
     }
 
     public void OnClickBackBtn()
