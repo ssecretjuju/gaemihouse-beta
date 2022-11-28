@@ -235,7 +235,9 @@ public class RoomListSetting : MonoBehaviourPunCallbacks
     //    PhotonNetwork.JoinRoom(inputRoomname);
     //}
 
+
     public GameObject CreateRoomUI;
+
 
     //방 참가가 완료 되었을 때 호출 되는 함수ge
     public override void OnJoinedRoom()

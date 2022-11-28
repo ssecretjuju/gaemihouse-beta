@@ -43,6 +43,8 @@ public class AntCustom : MonoBehaviour
     void Start()
     {
 
+
+
         if (SceneManager.GetActiveScene().name == "[Beta]LYJ_LobbyScene")
         {
             //CustomCanvas.SetActive(false);
@@ -100,6 +102,9 @@ public class AntCustom : MonoBehaviour
 
         print(customdata.faceType);
 
+        faceType[0].SetActive(false);
+        bodyType[0].SetActive(false);
+        accType[0].SetActive(false);
 
         faceType[customdata.faceType].SetActive(true);
         bodyType[customdata.bodyType].SetActive(true);

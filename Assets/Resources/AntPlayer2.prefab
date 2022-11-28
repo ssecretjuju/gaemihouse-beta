@@ -11884,7 +11884,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2525133714575639841
 Transform:
   m_ObjectHideFlags: 0
@@ -27946,11 +27946,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6636056912409685266}
   - component: {fileID: 6636056912409685277}
-  - component: {fileID: 502962951112260629}
   - component: {fileID: 6636056912409685276}
   - component: {fileID: 6636056912409685278}
   - component: {fileID: -6564097418627145630}
-  - component: {fileID: -3657791935059642391}
+  - component: {fileID: 9186743407952963211}
   - component: {fileID: 972718046881294098}
   - component: {fileID: 3021146654090450656}
   m_Layer: 0
@@ -27985,28 +27984,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6636056912409685273}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 033da13455bdec54db5da3ccd6935a91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 25
   rotationSpeed: 200
---- !u!114 &502962951112260629
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6636056912409685273}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59670334e6a93824d8fa6ac95e2ded3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 20
-  rotationSpeed: 200
-  camPivot: {fileID: 6636056912409685266}
 --- !u!143 &6636056912409685276
 CharacterController:
   m_ObjectHideFlags: 0
@@ -28072,7 +28056,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imoticon: []
   imoticonPrefab: {fileID: 0}
---- !u!114 &-3657791935059642391
+--- !u!114 &9186743407952963211
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -28091,7 +28075,6 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
-  - {fileID: 502962951112260629}
   - {fileID: 972718046881294098}
   - {fileID: 5392229343278377436}
   sceneViewId: 0
