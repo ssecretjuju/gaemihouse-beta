@@ -10,6 +10,7 @@ using UnityEngine.Networking;
 using System.IO;
 using Photon.Pun;
 using Photon.Realtime;
+using Random = System.Random;
 
 
 //GetRoomAll로 방 목록 정보 받아오기부터 하고,
@@ -130,6 +131,7 @@ public class LobbyRoomList : MonoBehaviourPunCallbacks
             for (int i = 0; i < dataCount; i++)
             {
                 double yield = roomYields[i];
+                //float yield = UnityEngine.Random.Range(-10.3f, 7.3f); 
                 //double roomYields[i] = yield;
                 
                 // 1. 수익률 < -10

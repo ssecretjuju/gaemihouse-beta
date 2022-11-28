@@ -13,14 +13,13 @@ using System.Text;
 
 public class Node : MonoBehaviour
 {
-
+    public string ChatNickName = LoginManager.Instance.playerData.memberNickname;
     public Text chatLog;
     public InputField input;
     string chatters;
     ScrollRect scroll_rect;
     string temp;
     public WebSocket ws;//소켓 선언
-    string mbti_name;
 
 
     [Header("IP입력_ PORT : 3333")]
@@ -29,6 +28,7 @@ public class Node : MonoBehaviour
 
     void Start()
     {
+        print(ChatNickName);
         scroll_rect = GameObject.FindObjectOfType<ScrollRect>();
 
         ws = new WebSocket(IP);// 127.0.0.1은 본인의 아이피 주소이다. 3333포트로 연결한다는 의미이다.
@@ -106,7 +106,7 @@ public class Node : MonoBehaviour
             // 이름이랑 같이 보낸다
             //ws.Send(string.Format("{0} : {1}","NickName", message ) );
             //ws.Send(string.Format("{0} : {1}","NickName", message ) );
-            ws.Send("%" + message);
+            ws.Send(ChatNickName + "%" + message);
 
             print("1");
 
