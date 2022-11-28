@@ -446,7 +446,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 117436112499375624}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 8.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18819,6 +18819,37 @@ Transform:
   m_Father: {fileID: 2638540113428545718}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4585771473102669232
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1824260667165968706}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1824260667165968706
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4585771473102669232}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 5.15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6636056912409685266}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4587316154098690031
 GameObject:
   m_ObjectHideFlags: 0
@@ -27974,6 +28005,7 @@ Transform:
   - {fileID: 241002978786230710}
   - {fileID: 4334536860264400968}
   - {fileID: 607305695920203263}
+  - {fileID: 1824260667165968706}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -28054,8 +28086,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b03e1a08fb263994b9e28770f84a7699, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imoticon: []
-  imoticonPrefab: {fileID: 0}
+  imoticon:
+  - {fileID: 21300000, guid: 9fb6a75b56dbec0419c31340b2ca4c91, type: 3}
+  - {fileID: 21300000, guid: b73df80f46f646748b5ea67df55a9ca0, type: 3}
+  - {fileID: 21300000, guid: ee7a8ed2ab5281b4cbcdcc63930b232f, type: 3}
+  - {fileID: 21300000, guid: 547c5c6b9a9cc5d46a8ac93571b83bbf, type: 3}
+  imoticonPrefab: {fileID: 117436112499375624}
 --- !u!114 &9186743407952963211
 MonoBehaviour:
   m_ObjectHideFlags: 0

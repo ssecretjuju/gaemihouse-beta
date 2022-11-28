@@ -1,8 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using Photon.Pun;
+using Photon.Realtime;
 
-public class Emoticon : MonoBehaviour
+public class Emoticon : MonoBehaviourPunCallbacks
 {
     //이모티콘
 
@@ -33,15 +38,24 @@ KeyCode.Alpha9,
         {
             if (Input.GetKeyDown(keyCodes[i]))
             {
-                GameObject imo = gameObject.transform.GetChild(0).gameObject;
-                EmoDestory_LYJ emo = imo.GetComponent<EmoDestory_LYJ>();
-                emo.emoOn = true;
-                emo.checkTime = 0;
-                SpriteRenderer spriteRenderer = imo.GetComponent<SpriteRenderer>();
-                spriteRenderer.sprite = imoticon[i];
-                imo.transform.parent = gameObject.transform;
+                photonView.RPC("OnEmoticon", RpcTarget.All, i);
             }
         }
+            
+
+    }
+
+    [PunRPC]
+    public void OnEmoticon(int i)
+    {
+           
+        GameObject imo = gameObject.transform.GetChild(2).gameObject;
+        EmoDestory_LYJ emo = imo.GetComponent<EmoDestory_LYJ>();
+        emo.emoOn = true;
+        emo.checkTime = 0;
+        SpriteRenderer spriteRenderer = imo.GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = imoticon[i];
+        imo.transform.parent = gameObject.transform;
 
     }
 }
