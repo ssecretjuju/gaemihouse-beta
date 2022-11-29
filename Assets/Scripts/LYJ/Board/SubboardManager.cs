@@ -38,6 +38,18 @@ public class SubboardManager : MonoBehaviour
 {
     public static SubboardManager Instance;
 
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
+
     public GameObject SubwriteWindow;
     public GameObject confirmWindow;
     public InputField inputTitle;
@@ -153,7 +165,7 @@ public class SubboardManager : MonoBehaviour
 
         string countNumber = count.ToString();
 
-        likeCountText.text = SubboardClick.Instance.subLikey;
+        likeCountText.text = countNumber;
 
         //서버로 좋아요 누른사람의 멤버 코드를 보낸다?
 

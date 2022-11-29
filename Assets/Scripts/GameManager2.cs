@@ -19,7 +19,7 @@ public class GameManager2 : MonoBehaviourPunCallbacks
         
         //플레이어를 생성한다.
         //PhotonNetwork.Instantiate("Player", spawnPos[idx], Quaternion.identity);
-        PhotonNetwork.Instantiate("AntPlayer2", new Vector3(25, 19, 9), Quaternion.identity);
+        PhotonNetwork.Instantiate("AntPlayer2", new Vector3(18, 19, 15), Quaternion.identity);
     }
 
     // Update is called once per frame

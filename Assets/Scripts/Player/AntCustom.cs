@@ -57,7 +57,7 @@ public class AntCustom : MonoBehaviourPun
         {
             //CustomCanvas.SetActive(false);
             print("·ë¾À");
-            if (photonView.IsMine)
+            if (photonView.IsMine && photonView.Owner != null)
             {
                 onGetCustomData();
             }

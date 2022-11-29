@@ -19,18 +19,6 @@ public class RoomBoardInfo
 
 public class PressF : MonoBehaviour
 {
-    public static PressF Instance;
-
-    private void Awake()
-    {
-        if (Instance != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
-    }
 
     public GameObject Subboard;
     public Transform boardItemParent;
@@ -62,6 +50,8 @@ public class PressF : MonoBehaviour
 
             }
         }
+
+
 
         if (onPlayer == false)
         {
@@ -101,7 +91,7 @@ public class PressF : MonoBehaviour
     }
 
     public List<int> subboardinfo;
-    public GameObject confirmWriting;
+    GameObject confirmWriting;
     public int boardmembercode;
     public int roomboardcode;
     public void GetRoomBoard(DownloadHandler handler)
@@ -109,8 +99,8 @@ public class PressF : MonoBehaviour
         
         JSONNode node = JSON.Parse(handler.text);
         subboardinfo.Clear();
-        //confirmWriting = SubboardManager.Instance.confirmWindow;
-        confirmWriting = GameObject.Find("SubBoardCanvas").transform.GetChild(0).gameObject;
+        confirmWriting = SubboardManager.Instance.confirmWindow;
+        //confirmWriting = GameObject.Find("SubBoardCanvas").transform.GetChild(0).gameObject;
 
         for (int i = 0; i < node["data"].Count; ++i)
         {
@@ -134,7 +124,7 @@ public class PressF : MonoBehaviour
             subboardClick.subContent = node["data"][i]["roomBoardContent"];
             subboardClick.subLikey = node["data"][i]["likeCount"].ToString();
             subboardClick.subTitle = node["data"][i]["roomBoardTitle"];
-
+            print("subboardClick " + i + " ¹øÂ° likey" + subboardClick.subLikey);
             Item.transform.GetChild(0).GetComponent<InputField>().text = node["data"][i]["roomBoardTitle"];
             Item.transform.GetChild(1).GetComponent<Text>().text = node["data"][i]["memberNickname"];         
             Item.transform.GetChild(2).GetComponent<Text>().text = node["data"][i]["roomBoardRegistDate"];

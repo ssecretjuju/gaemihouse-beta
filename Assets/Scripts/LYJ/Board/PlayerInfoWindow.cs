@@ -15,6 +15,8 @@ public class PlayerInfoWindow : MonoBehaviour
     public GameObject DoubleClick;
     public GameObject playerInfoWindow;
     public GameObject ChatCanvas;
+    public GameObject NoticeCanvas;
+    public GameObject HelpCanvas;
     public Text nickName;
     public Text carrerText;
     public Text yieldText;
@@ -62,5 +64,20 @@ public class PlayerInfoWindow : MonoBehaviour
     public void OnChatBtn()
     {
         ChatCanvas.SetActive(true);
+    }
+
+    public void OnNotice()
+    {
+        NoticeCanvas.SetActive(true);
+    }
+
+    public void OnHelp()
+    {
+        HelpCanvas.SetActive(true);
+    }
+    
+    public void Quit()
+    {
+        Application.Quit();
     }
 }

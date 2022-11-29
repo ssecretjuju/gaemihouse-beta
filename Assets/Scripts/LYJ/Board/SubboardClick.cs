@@ -11,7 +11,7 @@ using SimpleJSON;
 
 public class SubboardClick : MonoBehaviour
 {
-    public static SubboardClick Instance;
+/*    public static SubboardClick Instance;
 
     private void Awake()
     {
@@ -22,7 +22,7 @@ public class SubboardClick : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
-    }
+    }*/
 
     public Text comfrimTitle;
     public Text comfrimContent;

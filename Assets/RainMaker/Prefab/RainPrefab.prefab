@@ -9645,7 +9645,7 @@ MonoBehaviour:
   RainFallParticleSystem: {fileID: 19831730}
   RainExplosionParticleSystem: {fileID: 19824492}
   RainMistParticleSystem: {fileID: 19836512}
-  RainMistThreshold: 0.5
+  RainMistThreshold: 1
   WindSound: {fileID: 8300000, guid: f9826f595784348498b57bcf6b2c8b1f, type: 3}
   WindSoundVolumeModifier: 0.5
   WindZone: {fileID: 18204160}

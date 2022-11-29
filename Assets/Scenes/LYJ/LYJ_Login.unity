@@ -11638,6 +11638,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kospiInfo: 0
+  playRain: 0
+  particleObject: {fileID: 0}
 --- !u!1 &2093224565
 GameObject:
   m_ObjectHideFlags: 0

@@ -120,7 +120,7 @@ KeyCode.Alpha9,
     public void OnEmoticon(int i)
     {
            
-        GameObject imo = gameObject.transform.GetChild(2).gameObject;
+        GameObject imo = gameObject.transform.GetChild(1).gameObject;
         EmoDestory_LYJ emo = imo.GetComponent<EmoDestory_LYJ>();
         emo.emoOn = true;
         emo.checkTime = 0;

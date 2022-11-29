@@ -17,7 +17,7 @@ public class AntMove : MonoBehaviourPunCallbacks
 {
     public float speed, rotationSpeed;
     private CharacterController characterController;
-    private Text Nickname;
+    //private Text Nickname;
 
     Animator anim;
     
@@ -28,8 +28,8 @@ public class AntMove : MonoBehaviourPunCallbacks
         characterController = GetComponent<CharacterController>();
         anim = GetComponentInChildren<Animator>();
 
-        Nickname = GameObject.Find("Canvas").transform.GetChild(0).GetComponent<Text>();
-        Nickname.text = LoginManager.Instance.playerData.memberNickname;
+       //Nickname = GameObject.Find("Canvas").transform.GetChild(0).GetComponent<Text>();
+        //Nickname.text = LoginManager.Instance.playerData.memberNickname;
 
     }
 
@@ -77,7 +77,7 @@ public class AntMove : MonoBehaviourPunCallbacks
 
         }
 
-        Nickname.transform.forward = Camera.main.transform.forward;
+        //Nickname.transform.forward = Camera.main.transform.forward;
     }
 
     void Update()

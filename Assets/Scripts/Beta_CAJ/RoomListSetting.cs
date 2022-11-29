@@ -203,7 +203,7 @@ public class RoomListSetting : MonoBehaviourPunCallbacks
         print("OnJoinedRoom");
         if (PhotonNetwork.CurrentRoom.Name == "ÀüÃ¼")
         {
-            PhotonNetwork.LoadLevel("CAJ_LobbyRoomScene");
+            PhotonNetwork.LoadLevel("LYJ_Cafe");
         }
         else
         {
