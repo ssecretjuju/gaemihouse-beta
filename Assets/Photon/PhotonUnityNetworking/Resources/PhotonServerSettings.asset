@@ -48,7 +48,6 @@ MonoBehaviour:
   - RpcSetTrigger
   - OnEmoticon
   - SetCharColor
-  - RPC_Chat
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 0

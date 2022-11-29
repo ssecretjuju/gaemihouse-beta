@@ -5639,6 +5639,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0abc2bb22fe57f342a8b0c8e041f212a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputRoomName: {fileID: 0}
+  inputMaxPlayer: {fileID: 0}
+  btnCreate: {fileID: 0}
+  roomName: {fileID: 0}
+  roomData:
+    roomCode: 0
+    roomTitle: 
+    roomLimitedNumber: 0
+    roomRegistedNumber: 0
+    roomYield: 0
 --- !u!1 &1000234649
 GameObject:
   m_ObjectHideFlags: 0
@@ -11069,7 +11079,6 @@ GameObject:
   - component: {fileID: 2013778909}
   - component: {fileID: 2013778908}
   - component: {fileID: 2013778907}
-  - component: {fileID: 2013778910}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -11143,46 +11152,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2013778910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2013778906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30eddd7c36818d944b7d2c57f183b45a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coinInfo:
-    memberCode: 0
-    coinAmount: 0
-  coinData:
-    memberCode: 0
-    memberId: 
-    memberPassword: 
-    memberRole: 
-    memberNickname: 
-    memberName: 
-    stockFirm: 
-    accountNum: 0
-    appKey: 
-    appSecret: 
-    appKeyExpiresin: 
-    termsAgreementYn: 
-    reportCount: 0
-    blacklistYn: 
-    stockCareer: 
-    withdrawYn: 
-    authorities: 
-    enabled: 0
-    username: 
-    password: 
-    accountNonExpired: 0
-    accountNonLocked: 0
-    credentialsNonExpired: 0
-    yield: 
 --- !u!1 &2017656949
 GameObject:
   m_ObjectHideFlags: 0
@@ -11629,7 +11598,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f38c7f42341922d48a8bd466331ea97e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nickname: {fileID: 0}
   id: {fileID: 1904907671}
   password: {fileID: 1804457073}
   playerData:
@@ -11669,7 +11637,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 600dcb2351a2eac4bb85a879126d4cb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RainGameObject: {fileID: 0}
   kospiInfo: 0
 --- !u!1 &2093224565
 GameObject:
