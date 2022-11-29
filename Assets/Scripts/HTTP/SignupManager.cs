@@ -8,6 +8,13 @@ using System;
 
 //회원가입창에 입력되어 json으로 저장하여 DB에 전송할 정보들
 
+public class SignCoinInfo
+{
+    public string memberId;
+    public int coinAmount;
+}
+
+
 [Serializable]
 public class SignInfo
 {
@@ -39,14 +46,11 @@ public class SignupManager : MonoBehaviour
     //signup 버튼을 누르면 정보수집 동의 창 UI가 뜬다
     public GameObject agreeCanvas;
     public GameObject signUpCanvas;
-    public GameObject loginCanvas;
        
     public void OnClickSignBtn()
     {
         Debug.Log("동의창");
         agreeCanvas.SetActive(true);
-        loginCanvas.SetActive(false);
-
     }
 
     //동의 버튼을 누르면 회원가입 창 UI가 뜬다.
@@ -57,12 +61,7 @@ public class SignupManager : MonoBehaviour
         signUpCanvas.SetActive(true);
     }
 
-    public void OnSignupBtn()
-    {
-        loginCanvas.SetActive(true);
-        signUpCanvas.SetActive(false);
-    }
-
+    public SignInfo data;
 
     public void OnClickJoinBtn()
     {
@@ -73,14 +72,13 @@ public class SignupManager : MonoBehaviour
         data.memberNickname = memberNickname.text;
         data.stockCareer = stockCareer.text;
         data.stockFirm = stockFirm.text;
-        data.termsAgreementYn = "Y";
-        data.accountNum = 110110110.ToString();
-        data.appKey = 110110110.ToString();
-        data.appSecret = 110110110.ToString();
-
-
+        data.termsAgreementYn = termsAgreementYn.text;
+        data.accountNum = accountNum.text;
+        data.appKey = appKey.text;
+        data.appSecret = appSecret.text;
 
         HttpRequester requester = new HttpRequester();
+        //requester.url = "http://3.34.133.115:8080/auth/signup";
         requester.url = "http://secretjujucicd-api-env.eba-iuvr5h2k.ap-northeast-2.elasticbeanstalk.com/auth/signup";
         requester.requestType = RequestType.POST;
         print("test");
@@ -89,11 +87,29 @@ public class SignupManager : MonoBehaviour
         print(requester.postData);
 
         HttpManager.instance.SendRequest(requester);
-
-        signUpCanvas.SetActive(false);
-        loginCanvas.SetActive(true);
-
+        
     }
+
+    public void OnClickJoinCoinBtn()
+    {
+        SignCoinInfo coindata = new SignCoinInfo();
+
+        coindata.memberId = memberId.text;
+        coindata.coinAmount= 1000;
+
+
+        HttpRequester requester = new HttpRequester();
+        requester.url = "http://secretjujucicd-api-env.eba-iuvr5h2k.ap-northeast-2.elasticbeanstalk.com/coin/insert";
+        requester.requestType = RequestType.POST;
+        print("코인 Post test");
+
+        requester.postData = JsonUtility.ToJson(coindata, true);
+        print(requester.postData);
+
+        HttpManager.instance.SendRequest(requester);
+        print("코인 Post 완료!");
+        }
+
     // Start is called before the first frame update
     void Start()
     {
