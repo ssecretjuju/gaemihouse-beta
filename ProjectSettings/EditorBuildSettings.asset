@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LYJ/LYJ_RoomScene.unity
     guid: dcaf6acf4b34d584ab1fc564568c7d39
+  - enabled: 1
+    path: Assets/Aeju/GameScene.unity
+    guid: 12c8876c40851b242a6367386e878273
   m_configObjects: {}

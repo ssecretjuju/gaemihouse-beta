@@ -9286,7 +9286,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: b98fe0412e273ef4cb303823dad92cb6, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
@@ -11637,6 +11637,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 600dcb2351a2eac4bb85a879126d4cb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RainGameObject: {fileID: 0}
+  PetalGameObject: {fileID: 0}
   kospiInfo: 0
   playRain: 0
   particleObject: {fileID: 0}
@@ -11779,7 +11781,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: b98fe0412e273ef4cb303823dad92cb6, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0

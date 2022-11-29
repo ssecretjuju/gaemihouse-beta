@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using UnityEditor;
 
 public class GameManager2 : MonoBehaviourPunCallbacks
 {
@@ -19,7 +20,10 @@ public class GameManager2 : MonoBehaviourPunCallbacks
         
         //플레이어를 생성한다.
         //PhotonNetwork.Instantiate("Player", spawnPos[idx], Quaternion.identity);
-        PhotonNetwork.Instantiate("AntPlayer2", new Vector3(18, 19, 15), Quaternion.identity);
+        //PhotonNetwork.Instantiate("AntPlayer2", new Vector3(18, 19, 15), Quaternion.identity);
+        GameObject playerObject = PhotonNetwork.Instantiate("AntPlayer2", new Vector3(18, 19, 15), Quaternion.identity);
+        playerObject.name = LoginManager.Instance.playerData.memberNickname;
+        
     }
 
     // Update is called once per frame
@@ -34,4 +38,5 @@ public class GameManager2 : MonoBehaviourPunCallbacks
         base.OnPlayerEnteredRoom(newPlayer);
         print(newPlayer.NickName + "이 방에 들어왔습니다.");
     }
+
 }
