@@ -26,7 +26,7 @@ public class CAJ_CafeEnter : MonoBehaviourPunCallbacks
     {
         if (other.tag == "Player")
         {
-            PhotonNetwork.LoadLevel("CAJ_CafeScene");
+            PhotonNetwork.LoadLevel("LYJ_Cafe");
         }
     }
 }

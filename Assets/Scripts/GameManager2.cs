@@ -23,6 +23,7 @@ public class GameManager2 : MonoBehaviourPunCallbacks
         //PhotonNetwork.Instantiate("AntPlayer2", new Vector3(18, 19, 15), Quaternion.identity);
         GameObject playerObject = PhotonNetwork.Instantiate("AntPlayer2", new Vector3(18, 19, 15), Quaternion.identity);
         playerObject.name = LoginManager.Instance.playerData.memberNickname;
+        //playerObject.transform.localScale = new Vector3(3, 3, 3);
         
     }
 

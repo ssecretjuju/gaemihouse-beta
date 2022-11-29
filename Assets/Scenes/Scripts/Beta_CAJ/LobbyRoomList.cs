@@ -10,8 +10,7 @@ using UnityEngine.Networking;
 using System.IO;
 using Photon.Pun;
 using Photon.Realtime;
-
-
+using UnityEngine.SceneManagement;
 
 
 //GetRoomAll로 방 목록 정보 받아오기부터 하고,
@@ -291,6 +290,10 @@ public class LobbyRoomList : MonoBehaviourPunCallbacks
 
                     //2. 로비 접속 요청
                     print("LobbyJoin완료?");
+                }
+                else if (hit.collider.tag == "ClickGameHouse")
+                {
+                    SceneManager.LoadScene("GameScene");
                 }
                 else
                 {

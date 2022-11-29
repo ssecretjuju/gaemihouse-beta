@@ -5,6 +5,17 @@ TagManager:
   serializedVersion: 2
   tags:
   - House
+  - Terrain
+  - TrafficLight
+  - TrafficLightCrosswalk
+  - Crosswalk
+  - LevelCrossing
+  - Object
+  - Train
+  - FxTemporaire
+  - Car
+  - Human
+  - ClickGameHouse
   layers:
   - Default
   - TransparentFX
@@ -12,7 +23,7 @@ TagManager:
   - Building
   - Water
   - UI
-  - 
+  - ClickGameHouse
   - 
   - 
   - 
