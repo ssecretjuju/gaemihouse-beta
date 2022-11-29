@@ -33,7 +33,9 @@ public class KospiInfoManager : MonoBehaviour
     //public GameObject RainEffect;
     //public GameObject DarkLight;
     //public GameObject BrightLight;
-    //public GameObject RainGameObject;
+    public GameObject RainGameObject;
+    public GameObject PetalGameObject;
+
     private void Awake()
     {
         ////처음 : 비 파티클 실행 x
@@ -77,13 +79,13 @@ public class KospiInfoManager : MonoBehaviour
         print("kospiInfo : " + kospiInfo);
 
         // 1. 0이면 맵에 비가 내린다
-        // 2. 가져온 코스피 지수 값이 1이면 비가 내리지 않는다
+        // 2. 1이면 맵에 꽃비가 내린다 
         if (kospiInfo == 0)
         {
             Rain();
         }
 
-        if (kospiInfo == 1)
+        else
         {
             NoRain();
         }
@@ -110,6 +112,10 @@ public class KospiInfoManager : MonoBehaviour
         //print("지수 0 아님 -> : " + kospiInfo + "비 안 옴 ");
     }
 
+    public void PetalRain()
+    {
+
+    }
 
     // Start is called before the first frame update
     void Start()
