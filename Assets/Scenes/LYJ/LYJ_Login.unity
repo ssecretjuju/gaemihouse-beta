@@ -3131,7 +3131,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 868567334}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ChatKeyword, Assembly-CSharp
         m_MethodName: OnKeywordClickAll
         m_Mode: 1
@@ -4794,7 +4794,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 868567335}
-  - component: {fileID: 868567334}
   m_Layer: 0
   m_Name: ChatKeywordManager
   m_TagString: Untagged
@@ -4802,30 +4801,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &868567334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 868567333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77311587a0c1f3241ac64174fdb2afa8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: {fileID: 1904907671}
-  password: {fileID: 1804457073}
-  keydata:
-    keywordCount2: 
-    keywordCount1: 
-    keywordContent2: 
-    keywordContent1: 
-  keywordCount:
-    keywordCount2: 
-    keywordCount1: 
-    keywordContent2: 
-    keywordContent1: 
 --- !u!4 &868567335
 Transform:
   m_ObjectHideFlags: 0
@@ -5642,6 +5617,7 @@ MonoBehaviour:
   inputRoomName: {fileID: 0}
   inputMaxPlayer: {fileID: 0}
   btnCreate: {fileID: 0}
+  coinData: 0
   roomName: {fileID: 0}
   roomData:
     roomCode: 0
@@ -11638,8 +11614,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kospiInfo: 0
-  playRain: 0
-  particleObject: {fileID: 0}
+  rainObj: {fileID: 0}
+  rainLight: {fileID: 0}
+  clearLight: {fileID: 0}
 --- !u!1 &2093224565
 GameObject:
   m_ObjectHideFlags: 0
