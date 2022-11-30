@@ -65,15 +65,21 @@ public class LoginManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance != null)
+        //만약에 instance가 null이라면
+        if (Instance == null)
         {
-            Destroy(gameObject);
-            return;
+            //instance에 나를 넣겠다.
+            Instance = this;
+            //씬이 전환이 되어도 나를 파괴되지 않게 하겠다.
+            DontDestroyOnLoad(gameObject);
         }
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
+        //그렇지 않으면
+        else
+        {
+            //나를 파괴하겠다.
+            Destroy(gameObject);
+        }
     }
-
     public InputField id;
     public InputField password;
     public PlayerData playerData;
