@@ -7,7 +7,7 @@ using Photon.Pun;
 public class RoomUIText : MonoBehaviourPun
 {
     public Text roomName1;
-    public Text roomName2;
+    //public Text roomName2;
 
     public Text roomMember;
 
@@ -15,11 +15,11 @@ public class RoomUIText : MonoBehaviourPun
     void Start()
     {
         roomName1.text = PhotonNetwork.CurrentRoom.Name;
-        roomName2.text = PhotonNetwork.CurrentRoom.Name;
+        //roomName2.text = PhotonNetwork.CurrentRoom.Name;
 
         //roomMember.text = PhotonNetwork.CurrentRoom.Players;
-        Dictionary<int, Photon.Realtime.Player>members = PhotonNetwork.CurrentRoom.Players;
-        roomMember.text = members.ToString();
+        //Dictionary<int, Photon.Realtime.Player>members = PhotonNetwork.CurrentRoom.Players;
+        roomMember.text = PhotonNetwork.CurrentRoom.PlayerCount.ToString();
     }
 
     // Update is called once per frame

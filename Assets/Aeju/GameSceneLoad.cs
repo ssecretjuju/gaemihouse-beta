@@ -21,7 +21,7 @@ public class GameSceneLoad : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            SceneManager.LoadScene("CAJ_CafeScene");
+            SceneManager.LoadScene("GameScene");
         }
     }
 }

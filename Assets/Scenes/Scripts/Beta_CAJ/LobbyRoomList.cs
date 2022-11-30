@@ -247,7 +247,7 @@ public class LobbyRoomList : MonoBehaviourPunCallbacks
     //우선 룸 이름으로만! < 원래 : roomName (currPlayer / maxPlayer) >
     public void NormalSetInfo(string roomName)
     {
-        //이름을 지정해준다 : 어느 정보의 룸네임으로! 
+        //이름을 지정해준다 : 어느 정보의 룸네임으로! ga
         //NormalSetInfo();
 
         //수익률 설정 
@@ -267,7 +267,7 @@ public class LobbyRoomList : MonoBehaviourPunCallbacks
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            print("click");
+            //print("click");
             RaycastHit hit;
             print("hit");
             //int mask = (1 << 3);

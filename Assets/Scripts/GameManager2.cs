@@ -8,7 +8,7 @@ using UnityEditor;
 public class GameManager2 : MonoBehaviourPunCallbacks
 {
     public static GameManager2 instance;
-    public Transform playerPos;
+    //public Transform playerPos;
     
     // Start is called before the first frame update
     void Start()
@@ -21,9 +21,8 @@ public class GameManager2 : MonoBehaviourPunCallbacks
         //플레이어를 생성한다.
         //PhotonNetwork.Instantiate("Player", spawnPos[idx], Quaternion.identity);
         //PhotonNetwork.Instantiate("AntPlayer2", new Vector3(18, 19, 15), Quaternion.identity);
-        GameObject playerObject = PhotonNetwork.Instantiate("AntPlayer2", new Vector3(18, 19, 15), Quaternion.identity);
+        GameObject playerObject = PhotonNetwork.Instantiate("AntPlayer2", new Vector3(18, 10, 15), Quaternion.identity);
         playerObject.name = LoginManager.Instance.playerData.memberNickname;
-        //playerObject.transform.localScale = new Vector3(3, 3, 3);
         
     }
 

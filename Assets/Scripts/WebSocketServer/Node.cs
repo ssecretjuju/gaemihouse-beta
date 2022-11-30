@@ -14,6 +14,8 @@ using System.Text;
 //말풍선 setactive ? instantiate ? 
 public class Node : MonoBehaviour
 {
+    private GameObject AntPlayer;
+
     public string ChatNickName;
     public Text chatLog;
     public InputField input;
@@ -29,6 +31,8 @@ public class Node : MonoBehaviour
 
     void Start()
     {
+        //AntPlayer = GameObject.FindGameObjectWithTag("Player");
+
         ChatNickName = LoginManager.Instance.playerData.memberNickname;
 
         print(ChatNickName);

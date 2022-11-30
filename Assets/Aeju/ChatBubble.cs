@@ -1,101 +1,101 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-using Photon.Pun;
+//using System.Collections;
+//using System.Collections.Generic;
+//using UnityEngine;
+//using UnityEngine.UI;
+//using Photon.Pun;
 
-public class ChatBubble : MonoBehaviourPun
-{
-    private Text text;
+//public class ChatBubble : MonoBehaviourPun
+//{
+//    private Text text;
 
-    private string Dic;
+//    private string Dic;
 
-    private string inputString = "";
+//    private string inputString = "";
 
-    private float currentTime = 0;
-    private bool checkTime = false;
+//    private float currentTime = 0;
+//    private bool checkTime = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        text = GetComponent<Text>();
-    }
+//    // Start is called before the first frame update
+//    void Start()
+//    {
+//        text = GetComponent<Text>();
+//    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (!photonView.IsMine)
-        {
-            text.text = inputString;
-            return;
-        }
+//    // Update is called once per frame
+//    void Update()
+//    {
+//        if (!photonView.IsMine)
+//        {
+//            text.text = inputString;
+//            return;
+//        }
 
-        else 
-        {
-            if (Input.GetKeyDown(KeyCode.Return))
-            {
-                //이미 있을 땐 없애는 스크립트 추가
-                ResetCheckTime();
-                photonView.RPC("RPC_SetInputString", RpcTarget.All, Dic);
-            }
-            text.text = inputString;
+//        else 
+//        {
+//            if (Input.GetKeyDown(KeyCode.Return))
+//            {
+//                //이미 있을 땐 없애는 스크립트 추가
+//                ResetCheckTime();
+//                photonView.RPC("RPC_SetInputString", RpcTarget.All, Dic);
+//            }
+//            text.text = inputString;
 
-            UpdateCheckTime();
-        }
-    }
+//            UpdateCheckTime();
+//        }
+//    }
 
-    private void ResetCheckTime()
-    {
-        D("reset check time");
-        currentTime = 0;
-        checkTime = true;
-    }
-
-
-    private void UpdateCheckTime()
-    {
-        D("update check time");
-        if (!checkTime)
-        {
-            return;
-        }
-        else
-        {
-            currentTime += Time.deltaTime;
-        }
+//    private void ResetCheckTime()
+//    {
+//        D("reset check time");
+//        currentTime = 0;
+//        checkTime = true;
+//    }
 
 
-        if (currentTime >= 3)
-        {
-            checkTime = false;
-            currentTime = 0;
-            // inputString = "";
-            photonView.RPC("RPC_ResetInputString", RpcTarget.All);
-        }
-    }
+//    private void UpdateCheckTime()
+//    {
+//        D("update check time");
+//        if (!checkTime)
+//        {
+//            return;
+//        }
+//        else
+//        {
+//            currentTime += Time.deltaTime;
+//        }
 
 
-    [PunRPC]
-    private void RPC_SetInputString(string s)
-    {
+//        if (currentTime >= 3)
+//        {
+//            checkTime = false;
+//            currentTime = 0;
+//            // inputString = "";
+//            photonView.RPC("RPC_ResetInputString", RpcTarget.All);
+//        }
+//    }
 
 
-        inputString = s;
-    }
-
-    [PunRPC]
-    private void RPC_ResetInputString()
-    {
-        inputString = "";
-    }
+//    [PunRPC]
+//    private void RPC_SetInputString(string s)
+//    {
 
 
-    public bool isDebug = true;
+//        inputString = s;
+//    }
 
-    public void D(string s)
-    {
-        if (photonView.IsMine || !isDebug) return;
-        print(gameObject.transform.parent.parent.gameObject.name + " " + s);
-    }
+//    [PunRPC]
+//    private void RPC_ResetInputString()
+//    {
+//        inputString = "";
+//    }
 
-}
+
+//    public bool isDebug = true;
+
+//    public void D(string s)
+//    {
+//        if (photonView.IsMine || !isDebug) return;
+//        print(gameObject.transform.parent.parent.gameObject.name + " " + s);
+//    }
+
+//}

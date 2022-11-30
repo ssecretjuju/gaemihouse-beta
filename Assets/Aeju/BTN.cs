@@ -1,6 +1,7 @@
  using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+ using Photon.Pun;
+ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -68,6 +69,9 @@ using UnityEngine.SceneManagement;
 
     public void OKBtn()
     {
+        //PhotonNetwork.LoadLevel("[Beta]LYJ_LobbyScene");
+        //PhotonNetwork.Disconnect();
+        SceneManager.LoadScene("Test");
         SceneManager.LoadScene("[Beta]LYJ_LobbyScene");
     }
 }

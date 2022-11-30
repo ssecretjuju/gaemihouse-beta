@@ -201,7 +201,7 @@ public class RoomListSetting : MonoBehaviourPunCallbacks
     {
         base.OnJoinedRoom();
         print("OnJoinedRoom");
-        if (PhotonNetwork.CurrentRoom.Name == "ÀüÃ¼")
+        if (PhotonNetwork.CurrentRoom.Name == "Cafe")
         {
             PhotonNetwork.LoadLevel("LYJ_Cafe");
         }
