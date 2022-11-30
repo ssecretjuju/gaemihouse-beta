@@ -1,10 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using UnityEngine;
-using UnityEngine.UI;
-using System.Text;
 using UnityEngine.Networking;
-using System;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using SimpleJSON;
+
 
 
 public class KeywordManager : MonoBehaviour
