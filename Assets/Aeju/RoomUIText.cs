@@ -19,7 +19,7 @@ public class RoomUIText : MonoBehaviourPun
 
         //roomMember.text = PhotonNetwork.CurrentRoom.Players;
         //Dictionary<int, Photon.Realtime.Player>members = PhotonNetwork.CurrentRoom.Players;
-        roomMember.text = PhotonNetwork.CurrentRoom.PlayerCount.ToString();
+        //roomMember.text = PhotonNetwork.CurrentRoom.PlayerCount.ToString();
     }
 
     // Update is called once per frame

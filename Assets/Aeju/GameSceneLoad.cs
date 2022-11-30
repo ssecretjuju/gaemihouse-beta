@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameSceneLoad : MonoBehaviour
 {
+    public GameObject GameUI;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameUI.SetActive(false);
     }
 
     // Update is called once per frame
@@ -21,7 +23,7 @@ public class GameSceneLoad : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            SceneManager.LoadScene("GameScene");
+            GameUI.SetActive(true);
         }
     }
 }

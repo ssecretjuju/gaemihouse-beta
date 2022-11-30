@@ -52,7 +52,7 @@ using UnityEngine.SceneManagement;
         {
             averageTime = totalTime / 5;
 
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
 
             end.SetActive(true);
             averageScore.text = averageTime.ToString("F0");
@@ -71,7 +71,7 @@ using UnityEngine.SceneManagement;
     {
         //PhotonNetwork.LoadLevel("[Beta]LYJ_LobbyScene");
         //PhotonNetwork.Disconnect();
-        SceneManager.LoadScene("Test");
-        SceneManager.LoadScene("[Beta]LYJ_LobbyScene");
+        //SceneManager.LoadScene("Test");
+        //SceneManager.LoadScene("[Beta]LYJ_LobbyScene");
     }
 }

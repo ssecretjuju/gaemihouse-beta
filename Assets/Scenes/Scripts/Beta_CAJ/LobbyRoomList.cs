@@ -289,11 +289,7 @@ public class LobbyRoomList : MonoBehaviourPunCallbacks
                     OnClickConnectLobby();
 
                     //2. 로비 접속 요청
-                    print("LobbyJoin완료?");
-                }
-                else if (hit.collider.tag == "ClickGameHouse")
-                {
-                    SceneManager.LoadScene("GameScene");
+                    print("LobbyJoin완료");
                 }
                 else
                 {
