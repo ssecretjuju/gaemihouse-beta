@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Net;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -12,29 +11,6 @@ using System.IO;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.SceneManagement;
-using SimpleJSON;
-
-
-
-//코인 계산위해 보내야하는거
-
-[Serializable]
-public class ForCoinUpdate
-{
-    public string memberId;
-    public int coinAmount;
-}
-
-//업데이트된 코인정보
-
-[Serializable]
-
-public class CoinUpdateInfo
-{
-    public int status;
-    public string message;
-    public int data;
-}
 
 
 //GetRoomAll로 방 목록 정보 받아오기부터 하고,
@@ -285,16 +261,16 @@ public class LobbyRoomList : MonoBehaviourPunCallbacks
     }
 
     public string clickRoomName;
-    public GameObject joinPop;
 
     public void ClickRay()
     {
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            //print("click");
             RaycastHit hit;
+            print("hit");
             //int mask = (1 << 3);
-
             int mask = 1 << LayerMask.NameToLayer("Building");
             if (Physics.Raycast(ray, out hit, 150f, mask))
             {
@@ -302,15 +278,18 @@ public class LobbyRoomList : MonoBehaviourPunCallbacks
                 //클릭한 물체의 태그가 House라면 
                 if (hit.collider.tag == "House")
                 {
-                    //가입창 팝업이 뜬다
-                    joinPop.SetActive(true);
+                    //RoomOptions roomOptions = new RoomOptions();
+                    ////roomOptions.IsVisible = false;
+                    //roomOptions.MaxPlayers = 20;
+
+                    Debug.Log(clickRoomName);
+                    Debug.Log("House 클릭!");
 
                     //1. 서버 접속 요청
-                    //OnClickConnectLobby();
+                    OnClickConnectLobby();
 
                     //2. 로비 접속 요청
                     print("LobbyJoin완료");
-
                 }
                 else
                 {
@@ -320,46 +299,6 @@ public class LobbyRoomList : MonoBehaviourPunCallbacks
         }
     }
 
-    public void Okjoin()
-    {
-        //가입ok버튼을 누르면 300쿠키가 깎임
-        ForCoinUpdate data = new ForCoinUpdate();
-        data.memberId = LoginManager.Instance.playerData.memberId;
-        data.coinAmount = -300;
-        print(data.coinAmount);
-
-
-        HttpRequester requester = new HttpRequester();
-        requester.url = "http://secretjujucicd-api-env.eba-iuvr5h2k.ap-northeast-2.elasticbeanstalk.com/coin/update";
-        requester.requestType = RequestType.POST;
-
-        requester.postData = JsonUtility.ToJson(data, true);
-        print(requester.postData);
-
-
-        requester.onComplete = OnUpdateCoin;
-        HttpManager.instance.SendRequest(requester);
-
-        OnClickConnectLobby();
-        print("roomJoin완료");
-    }
-
-    public int coinData;
-    public void OnUpdateCoin(DownloadHandler handler)
-    {
-        //깎인 쿠키를 받아온다
-        string data = System.Text.Encoding.Default.GetString(handler.data);
-
-        print("data : " + data);
-        CoinUpdateInfo updateCoin = JsonUtility.FromJson<CoinUpdateInfo>(data);
-
-        coinData = updateCoin.data;
-        print(coinData);
-
-        Coincanvas.Instance.coinText.text = coinData.ToString();
-
-        joinPop.SetActive(false);
-    }
 
     public void OnClickConnectLobby()
     {

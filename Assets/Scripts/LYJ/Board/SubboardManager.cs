@@ -40,14 +40,16 @@ public class SubboardManager : MonoBehaviour
 
     private void Awake()
     {
-        //만약에 instance가 null이라면
-        if (Instance == null)
+        if (Instance != null)
         {
-            //instance에 나를 넣겠다.
-            Instance = this;
+            Destroy(gameObject);
+            return;
         }
-
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
+
+
     public GameObject SubwriteWindow;
     public GameObject confirmWindow;
     public InputField inputTitle;
@@ -116,8 +118,6 @@ public class SubboardManager : MonoBehaviour
         confirmTitle.text = inputTitle.text;
         title.text = inputTitle.text;
         content.text = inputContent.text;
-        nickname.text = LoginManager.Instance.playerData.memberNickname;
-
         //nickname.text = LoginManager.Instance.playerData.memberNickname;
 
         string yy = System.DateTime.Now.ToString("yyyy");

@@ -91,47 +91,6 @@ public class RoomListSetting : MonoBehaviourPunCallbacks
         print("Post 완료!");
     }
 
-    public void Okjoin()
-    {
-        //가입ok버튼을 누르면 300쿠키가 깎임
-        ForCoinUpdate data = new ForCoinUpdate();
-        data.memberId = LoginManager.Instance.playerData.memberId;
-        data.coinAmount = -300;
-        print(data.coinAmount);
-
-
-        HttpRequester requester = new HttpRequester();
-        requester.url = "http://secretjujucicd-api-env.eba-iuvr5h2k.ap-northeast-2.elasticbeanstalk.com/coin/update";
-        requester.requestType = RequestType.POST;
-
-        requester.postData = JsonUtility.ToJson(data, true);
-        print(requester.postData);
-
-
-        requester.onComplete = OnUpdateCoin;
-        HttpManager.instance.SendRequest(requester);
-
-        CreateRoom();
-
-    }
-
-    public int coinData;
-    public void OnUpdateCoin(DownloadHandler handler)
-    {
-        //깎인 쿠키를 받아온다
-        string data = System.Text.Encoding.Default.GetString(handler.data);
-
-        print("data : " + data);
-        CoinUpdateInfo updateCoin = JsonUtility.FromJson<CoinUpdateInfo>(data);
-
-        coinData = updateCoin.data;
-        print(coinData);
-
-        Coincanvas.Instance.coinText.text = coinData.ToString();
-
-
-    }
-
     public void CreateRoom()
     {
         // 방 옵션을 설정
@@ -172,7 +131,6 @@ public class RoomListSetting : MonoBehaviourPunCallbacks
         //PhotonNetwork.CreateRoom(inputRoomName.text, roomOptions);
         //print(PhotonNetwork.CurrentRoom.Name);
     }
-
 
     //마스터 서버 접속성공시 호출(Lobby에 진입할 수 없는 상태)
     public override void OnConnected()

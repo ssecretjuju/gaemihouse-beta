@@ -38,13 +38,17 @@ public class KospiInfoManager : MonoBehaviour
 
     private void Awake()
     {
-
+        ////처음 : 비 파티클 실행 x
+        //RainGameObject.SetActive(false);
 
         if (Instance != null)
         {
+            Destroy(gameObject);
             return;
         }
-
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+        //RainEffectGetComponentInChildren<ParticleSystem>().gameObject;
     }
 
     public void OnGetKospi()
@@ -61,11 +65,8 @@ public class KospiInfoManager : MonoBehaviour
     }
 
     public int kospiInfo;
-    //public bool playRain = false;
-    public GameObject rainObj;
-    public GameObject rainLight;
-    public GameObject clearLight;
-
+    public bool playRain = false;
+    public ParticleSystem particleObject;
     public void OnSaveKospi(DownloadHandler handler)
     {
 
@@ -81,32 +82,31 @@ public class KospiInfoManager : MonoBehaviour
         // 2. 1이면 맵에 꽃비가 내린다 
         if (kospiInfo == 0)
         {
-            print("비가내린다");
             Rain();
         }
 
         else
         {
-            print("비가안내린다");
             NoRain();
         }
+
+
+
 
     }
 
     public void Rain()
     {
 
-        rainObj.SetActive(true);
-        rainLight.SetActive(true);
+        //RainGameObject.SetActive(true);
+        ////DarkLight.SetActive(true);
         //BrightLight.SetActive(false);
         //print("지수 0 맞음 -> : " + kospiInfo + "비 옴 ");
     }
 
     public void NoRain()
     {
-        rainObj.SetActive(false);
-        rainLight.SetActive(false);
-        clearLight.SetActive(true);
+        ////BrightLight.SetActive(true);
         ////DarkLight.SetActive(false);
         //RainGameObject.SetActive(false);
         //print("지수 0 아님 -> : " + kospiInfo + "비 안 옴 ");
@@ -126,20 +126,6 @@ public class KospiInfoManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.O))
-        //{
-        //    rainObj.SetActive(true);
-        //    rainLight.SetActive(true);
-        //    //clearObj.SetActive(false);
-        //    clearLight.SetActive(false);
-        //}
-
-        //if (Input.GetKeyDown(KeyCode.P))
-        //{
-        //    rainObj.SetActive(false);
-        //    rainLight.SetActive(false);
-        //    //clearObj.SetActive(true);
-        //    clearLight.SetActive(true);
-        //}
+        
     }
 }

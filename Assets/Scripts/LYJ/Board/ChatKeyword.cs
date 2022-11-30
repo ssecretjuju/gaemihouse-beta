@@ -8,16 +8,16 @@ using UnityEngine.UI;
 using SimpleJSON;
 
 
-//서버에서 가져오는 정보
 
 [Serializable]
 public class KeywordData
 {
-    public string keywordId;
-    public string keywordContent;
-    public string keywordCount;
-    public string keywordDate;
+    public string keywordCount2;
+    public string keywordCount1;
+    public string keywordContent2;
+    public string keywordContent1;
 }
+
 
 [Serializable]
 public class ResponseKeywordData
@@ -29,51 +29,23 @@ public class ResponseKeywordData
 
 public class ChatKeyword : MonoBehaviour
 {
-    //public static ChatKeyword Instance;
+    public static ChatKeyword Instance;
 
-    public GameObject interObject;
-    public GameObject popUpImage;
-    public GameObject keywordBoard;
-    bool onPlayer = false;
-
-    void Update()
+    private void Awake()
     {
-        if (onPlayer == true)
+        if (Instance != null)
         {
-            popUpImage.SetActive(true);
-            popUpImage.transform.forward = Camera.main.transform.forward;
-
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-
-                interObject.SetActive(true);
-                OnKeywordClickAll();
-
-            }
+            Destroy(gameObject);
+            return;
         }
-
-        if (onPlayer == false)
-        {
-            popUpImage.SetActive(false);
-        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        //만약 충돌한 것이 플레이어라면
-        if (other.tag == "Player")
-        {
-            onPlayer = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            onPlayer = false;
-        }
-    }
+    public InputField id;
+    public InputField password;
+    public KeywordData keydata;
+    public KeywordData keywordCount;
 
 
     public void OnKeywordClickAll()
@@ -83,39 +55,33 @@ public class ChatKeyword : MonoBehaviour
         //print(requester.url);
         requester.requestType = RequestType.GET;
 
-        requester.onComplete = OnKeyword;
+        requester.onComplete = OnCilckDownloadAll;
 
 
         HttpManager.instance.SendRequest(requester);
     }
 
-    public List<int> keywordInfo;
-    public List<Text> keywordText;
-    public void OnKeyword(DownloadHandler handler)
+    public void OnCilckDownloadAll(DownloadHandler handler)
     {
-        JSONNode node = JSON.Parse(handler.text);
-        keywordInfo.Clear();
 
-        for (int i = 0; i < node["data"].Count; ++i)
-        {
+        string data = System.Text.Encoding.Default.GetString(handler.data);
+        print("data : " + data);
 
-            keywordInfo.Add(node["data"][i]["keywordContent"]);
-            print("제목 +" + node["data"][0]["keywordContent"]);
+        ResponseKeywordData keyword = JsonUtility.FromJson<ResponseKeywordData>(data);
 
-            keywordText[0].text = node["data"][0]["keywordContent"];
-            keywordText[1].text = node["data"][1]["keywordContent"];
-            keywordText[2].text = node["data"][2]["keywordContent"];
-            //keywordText[3].text = node["data"][3]["keywordContent"];
-            //keywordText[4].text = node["data"][4]["keywordContent"];
+        keydata = keyword.data;
+        print(keydata.keywordContent1);
 
-        }
-        // Start is called before the first frame update
-        void Start()
-        {
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
 
-        }
-
-        // Update is called once per frame
-
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }
