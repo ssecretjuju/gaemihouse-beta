@@ -23,7 +23,7 @@ public class Node : MonoBehaviour
     ScrollRect scroll_rect;
     string temp;
     public WebSocket ws;//소켓 선언
-
+    public AntChat antChat;
 
     [Header("IP입력_ PORT : 3333")]
     public string IP = "ws://3.34.133.115:8001";
@@ -32,6 +32,7 @@ public class Node : MonoBehaviour
     void Start()
     {
         //AntPlayer = GameObject.FindGameObjectWithTag("Player");
+        //chatbubble = AntPlayer.Ge
 
         ChatNickName = LoginManager.Instance.playerData.memberNickname;
 
@@ -114,6 +115,12 @@ public class Node : MonoBehaviour
 
             print("2");
 
+            if (antChat != null)
+            {
+
+                antChat.ShowBubble();
+            }
+
             // 그리고 초기화
             input.text = "";
 
@@ -123,8 +130,32 @@ public class Node : MonoBehaviour
             // 스크롤 제어
             scroll_rect.verticalNormalizedPosition = 0.0f;
 
+            
         }
     }
+
+    //public GameObject chatbubble;
+    //public Text Playerchat;
+
+    //void ShowBubble(string msg)
+    //{
+
+    //    if (msg != null)
+    //    {
+    //    chatbubble.SetActive(true);
+    //    Playerchat.text = msg;
+    //    }
+
+    //    //null 이면 return 
+    //    else
+    //    {
+    //        return;
+    //    }
+
+    //    // 말풍선 오브젝트 setactive True
+    //    //null이면 return 
+    //    // Text 값에 msg 값 추가
+    //}
 
     public void Test()
     {

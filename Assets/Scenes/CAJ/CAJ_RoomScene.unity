@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 49066890}
   m_Layer: 0
   m_Name: WebSocket
-  m_TagString: Untagged
+  m_TagString: Chat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -246,6 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b431b6bdc71a2b46bfc777325ec78a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ChatNickName: 
   chatLog: {fileID: 814774953}
   input: {fileID: 68555375}
   IP: ws://3.34.133.115:8001
@@ -6214,7 +6215,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit

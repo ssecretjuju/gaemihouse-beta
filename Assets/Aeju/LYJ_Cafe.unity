@@ -384,6 +384,7 @@ MonoBehaviour:
   ChatNickName: 1
   chatLog: {fileID: 0}
   input: {fileID: 0}
+  antChat: {fileID: 0}
   IP: ws://3.34.133.115:8001
 --- !u!1 &53798982
 GameObject:
@@ -2325,7 +2326,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 380276940}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -25.9, y: 20.6, z: -64.7}
+  m_LocalPosition: {x: -10.35, y: 62.09, z: -14.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2379,7 +2380,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 30
+  orthographic size: 50
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -6412,7 +6413,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1189482546}
   m_LocalRotation: {x: 0.23911765, y: 0.3696438, z: -0.09904577, w: 0.89239913}
-  m_LocalPosition: {x: -95, y: 73, z: -85}
+  m_LocalPosition: {x: -64.2, y: 2, z: -26.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8280,6 +8281,7 @@ MonoBehaviour:
   ChatNickName: 1
   chatLog: {fileID: 528615077}
   input: {fileID: 1970370679}
+  antChat: {fileID: 0}
   IP: ws://3.34.133.115:8001
 --- !u!1 &1476386711
 GameObject:

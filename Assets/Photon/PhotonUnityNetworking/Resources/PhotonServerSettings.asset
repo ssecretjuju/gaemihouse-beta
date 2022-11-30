@@ -51,6 +51,7 @@ MonoBehaviour:
   - RPCNickName
   - RPC_ResetInputString
   - RPC_SetInputString
+  - RPCChatOn
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 0

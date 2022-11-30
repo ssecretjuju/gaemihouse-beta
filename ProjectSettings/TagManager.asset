@@ -16,6 +16,7 @@ TagManager:
   - Car
   - Human
   - ClickGameHouse
+  - Chat
   layers:
   - Default
   - TransparentFX
