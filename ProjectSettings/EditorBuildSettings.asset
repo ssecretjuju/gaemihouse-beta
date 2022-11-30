@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Aeju/LYJ_Login.unity
+    path: Assets/Aeju/CAJ_Login.unity
     guid: 3126ac137959dff4b9526afdb3ddf0a0
   - enabled: 0
     path: Assets/Scenes/CAJ/CAJ_LoginScene.unity
@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/LYJ/LYJ_CharacterSelection.unity
     guid: 73433d4a02bf8be4d9f31060dcd11cf0
   - enabled: 1
-    path: Assets/Aeju/[Beta]LYJ_LobbyScene.unity
+    path: Assets/Aeju/[Beta]CAJ_LobbyScene.unity
     guid: e9f0a914b71a1974985aeaec18b5eeb2
   - enabled: 0
     path: Assets/Scenes/CAJ/[Beta]CAJ_LobbyScene.unity
