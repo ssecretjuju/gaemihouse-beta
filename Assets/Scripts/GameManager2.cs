@@ -19,21 +19,7 @@ public class GameManager2 : MonoBehaviourPunCallbacks
         
         //플레이어를 생성한다.
         //PhotonNetwork.Instantiate("Player", spawnPos[idx], Quaternion.identity);
-        GameObject antPlayer = PhotonNetwork.Instantiate("AntPlayer2", new Vector3(18, 10, 15), Quaternion.identity);
-
-        //플레이어의 이익률이 10%이상이면 개미 크기 2배
-        antPlayer.name = LoginManager.Instance.playerData.memberNickname;
-        double a = double.Parse(LoginManager.Instance.playerData.yield);
-
-        if (a > 5)
-        {
-            antPlayer.transform.localScale = new Vector3(2, 2, 2);
-        }
-        else
-        {
-            antPlayer.transform.localScale = new Vector3(1, 1, 1);
-        }
-
+        PhotonNetwork.Instantiate("AntPlayer2", new Vector3(18, 10, 15), Quaternion.identity);
     }
 
     // Update is called once per frame
