@@ -28,11 +28,12 @@ public class GameManager2 : MonoBehaviourPunCallbacks
         playerObject.name = LoginManager.Instance.playerData.memberNickname;
         //int returns = int.Parse(LoginManager.Instance.playerData.yield);
         double a = double.Parse(LoginManager.Instance.playerData.yield);
-        print("return : " + a);
+        //print("return : " + a);
 
-        if (a > 5)
+        if (11 > a && a > 5)
         {
             playerObject.transform.localScale = new Vector3(2, 2, 2);
+            //playerObject.transform.localScale = new Vector3(1.5, 2, 2);
         }
 
         else if (a > 10)

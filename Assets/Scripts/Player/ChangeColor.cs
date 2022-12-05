@@ -221,6 +221,6 @@ public class ChangeColor : MonoBehaviour
 
     public void Gobtn()
     {
-        SceneManager.LoadScene("[Beta]LYJ_LobbyScene");
+        SceneManager.LoadScene("LYJ_LobbyScene");
     }
 }

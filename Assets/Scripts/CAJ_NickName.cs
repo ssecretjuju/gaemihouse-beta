@@ -16,13 +16,13 @@ public class CAJ_NickName : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
-        if (SceneManager.GetActiveScene().name != "[Beta]LYJ_LobbyScene")
+        if (SceneManager.GetActiveScene().name != "LYJ_LobbyScene")
         {
             pv = GetComponent<PhotonView>();
             if (PhotonNetwork.IsConnected && photonView.IsMine)
                 pv.RPC("RPCNickName", RpcTarget.AllBuffered, LoginManager.Instance.playerData.memberNickname);
         }
-        if (SceneManager.GetActiveScene().name == "[Beta]LYJ_LobbyScene")
+        if (SceneManager.GetActiveScene().name == "LYJ_LobbyScene")
         {
             nickName.text = LoginManager.Instance.playerData.memberNickname;
         }
@@ -33,14 +33,14 @@ public class CAJ_NickName : MonoBehaviourPunCallbacks
 
     private void OnEnable()
     {
-        if (SceneManager.GetActiveScene().name != "[Beta]LYJ_LobbyScene")
+        if (SceneManager.GetActiveScene().name != "LYJ_LobbyScene")
         {
             pv = GetComponent<PhotonView>();
             if (PhotonNetwork.IsConnected && photonView.IsMine)
                 pv.RPC("RPCNickName", RpcTarget.AllBuffered, LoginManager.Instance.playerData.memberNickname);
         }
 
-        if (SceneManager.GetActiveScene().name == "[Beta]LYJ_LobbyScene")
+        if (SceneManager.GetActiveScene().name == "LYJ_LobbyScene")
         {
             nickName.text = LoginManager.Instance.playerData.memberNickname;
         }
@@ -54,7 +54,7 @@ public class CAJ_NickName : MonoBehaviourPunCallbacks
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene().name != "[Beta]LYJ_LobbyScene")
+        if (SceneManager.GetActiveScene().name != "LYJ_LobbyScene")
         {
             if (pv.IsMine)
             {

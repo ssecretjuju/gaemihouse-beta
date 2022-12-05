@@ -6,17 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Final/LYJ_Login.unity
+    path: Assets/AAAAA/LYJ_Login.unity
     guid: 2e085d5b568c018478844a86f86b6e2e
   - enabled: 1
-    path: Assets/Scenes/LYJ/LYJ_CharacterSelection.unity
+    path: Assets/AAAAA/LYJ_CharacterSelection.unity
     guid: 73433d4a02bf8be4d9f31060dcd11cf0
   - enabled: 0
     path: Assets/Scenes/CAJ/CAJ_LoginScene.unity
     guid: b406cce8bf5aeb4419d4de2edce4f8c0
   - enabled: 1
-    path: Assets/Aeju/[Beta]CAJ_LobbyScene.unity
-    guid: e9f0a914b71a1974985aeaec18b5eeb2
+    path: Assets/AAAAA/LYJ_LobbyScene.unity
+    guid: a4159317b8117ad47b110592325ff81e
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
@@ -24,10 +24,10 @@ EditorBuildSettings:
     path: Assets/Scenes/CAJ/CAJ_RoomScene.unity
     guid: 33b8022aa6996c84f81e98ebf6fa54cd
   - enabled: 1
-    path: Assets/Scenes/LYJ/LYJ_RoomScene.unity
+    path: Assets/Aeju2/LYJ_RoomScene.unity
     guid: dcaf6acf4b34d584ab1fc564568c7d39
   - enabled: 1
-    path: Assets/Aeju/LYJ_Cafe.unity
+    path: Assets/Aeju/[F]CAJ_Cafe.unity
     guid: dc107a4b399e6ec48b68fb7ce03e711e
   - enabled: 0
     path: Assets/Scenes/LYJ/Test.unity

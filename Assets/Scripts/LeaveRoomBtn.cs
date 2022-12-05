@@ -24,6 +24,6 @@ public class LeaveRoomBtn : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.Disconnect();
         //해당 씬으로 이동 
-        SceneManager.LoadScene("[Beta]LYJ_LobbyScene");
+        SceneManager.LoadScene("LYJ_LobbyScene");
     }
 }
