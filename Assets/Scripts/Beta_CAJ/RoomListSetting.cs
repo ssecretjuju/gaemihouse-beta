@@ -239,19 +239,19 @@ public class RoomListSetting : MonoBehaviourPunCallbacks
     //}
 
     //방 참가가 완료 되었을 때 호출 되는 함수ge
-    public override void OnJoinedRoom()
-    {
-        base.OnJoinedRoom();
-        print("OnJoinedRoom");
-        if (PhotonNetwork.CurrentRoom.Name == "전체")
-        {
-            PhotonNetwork.LoadLevel("LYJ_Cafe");
-        }
-        else
-        {
-            PhotonNetwork.LoadLevel("LYJ_RoomScene");
-        }
-    }
+    //public override void OnJoinedRoom()
+    //{
+    //    base.OnJoinedRoom();
+    //    print("OnJoinedRoom");
+    //    if (PhotonNetwork.CurrentRoom.Name == "Cafe")
+    //    {
+    //        PhotonNetwork.LoadLevel("LYJ_Cafe");
+    //    }
+    //    else
+    //    {
+    //        PhotonNetwork.LoadLevel("LYJ_RoomScene");
+    //    }
+    //}
 
     //방 참가가 실패 되었을 때 호출 되는 함수
     public override void OnJoinRoomFailed(short returnCode, string message)

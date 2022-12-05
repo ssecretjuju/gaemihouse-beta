@@ -295,7 +295,7 @@ public class LobbyRoomList : MonoBehaviourPunCallbacks
             //int mask = (1 << 3);
 
             int mask = 1 << LayerMask.NameToLayer("Building");
-            if (Physics.Raycast(ray, out hit, 150f, mask))
+            if (Physics.Raycast(ray, out hit, 300f, mask))
             {
                 clickRoomName = hit.collider.gameObject.name.ToString();
                 //클릭한 물체의 태그가 House라면 
@@ -446,6 +446,16 @@ public class LobbyRoomList : MonoBehaviourPunCallbacks
     {
         base.OnJoinedRoom();
         print("OnJoinedRoom");
+        print(PhotonNetwork.CurrentRoom.Name);
+
+        if (PhotonNetwork.CurrentRoom.Name == "cafe")
+        {
+            PhotonNetwork.LoadLevel("LYJ_Cafe");
+        }
+        else
+        {
+            PhotonNetwork.LoadLevel("LYJ_RoomScene");
+        }
         //PhotonNetwork.LoadLevel("LYJ_RoomScene");
         print("방 참가 완료, 방 이름 : " + PhotonNetwork.CurrentRoom.Name);
         print("현재 방 인원 : " + PhotonNetwork.CurrentRoom.PlayerCount);
