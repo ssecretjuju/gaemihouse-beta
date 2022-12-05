@@ -318,6 +318,30 @@ public class LobbyRoomList : MonoBehaviourPunCallbacks
         }
     }
 
+    public void CoinRefill()
+    {
+        //선물 버튼을 누르면 1000쿠키가 리필됨
+        ForCoinUpdate data = new ForCoinUpdate();
+        data.memberId = LoginManager.Instance.playerData.memberId;
+        data.coinAmount = +1000;
+        print(data.coinAmount);
+
+
+        HttpRequester requester = new HttpRequester();
+        requester.url = "http://secretjujucicd-api-env.eba-iuvr5h2k.ap-northeast-2.elasticbeanstalk.com/coin/update";
+        requester.requestType = RequestType.POST;
+
+        requester.postData = JsonUtility.ToJson(data, true);
+        print(requester.postData);
+
+
+        requester.onComplete = OnUpdateCoin;
+        HttpManager.instance.SendRequest(requester);
+
+        print("쿠키 리필 완료");
+    }
+    
+
     public void Okjoin()
     {
         //가입ok버튼을 누르면 300쿠키가 깎임
