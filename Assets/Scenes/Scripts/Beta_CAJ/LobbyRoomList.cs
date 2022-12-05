@@ -420,8 +420,8 @@ public class LobbyRoomList : MonoBehaviourPunCallbacks
         print("joinorCreateRoom 완료");
         Debug.Log("clickRoomName " + clickRoomName);
         
-        PhotonNetwork.JoinOrCreateRoom("HIHI", roomOptions, TypedLobby.Default);
-        print("111111111111111");
+        PhotonNetwork.JoinOrCreateRoom(clickRoomName, roomOptions, TypedLobby.Default);
+        //print("111111111111111");
         
         //내 닉네임 설정
         //PhotonNetwork.NickName = inputNickName.text;

@@ -2498,7 +2498,6 @@ MonoBehaviour:
   interObject: {fileID: 623274572}
   popUpImage: {fileID: 0}
   subboardinfo: 
-  confirmWriting: {fileID: 370025225}
   boardmembercode: 0
   roomboardcode: 0
 --- !u!65 &347426722
@@ -2947,11 +2946,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 368005326}
   m_CullTransparentMesh: 1
---- !u!1 &370025225 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1513802067141525429, guid: dac8fa6ee7029474eb5c1f2640a4d8cc, type: 3}
-  m_PrefabInstance: {fileID: 1380917179}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &370025226 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1513802067141525428, guid: dac8fa6ee7029474eb5c1f2640a4d8cc, type: 3}
@@ -8347,6 +8341,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 1db2c3655dc51934b959a7156e94c8dc, type: 3}
+      propertyPath: m_Materials.Array.data[12]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2c5b7996125d25d45865edf5cdbf811c, type: 2}
     - target: {fileID: 919132149155446097, guid: 1db2c3655dc51934b959a7156e94c8dc, type: 3}
       propertyPath: m_Name
       value: starbucks
@@ -15424,6 +15422,8 @@ MonoBehaviour:
   DoubleClick: {fileID: 1076798064}
   playerInfoWindow: {fileID: 1758744289}
   ChatCanvas: {fileID: 0}
+  NoticeCanvas: {fileID: 0}
+  HelpCanvas: {fileID: 0}
   nickName: {fileID: 1721899088}
   carrerText: {fileID: 1406523235}
   yieldText: {fileID: 649725494}

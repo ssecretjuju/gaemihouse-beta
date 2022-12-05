@@ -168,7 +168,7 @@ public class RoomListSetting : MonoBehaviourPunCallbacks
 
         //OnClickConnect();
 
-
+        
         //PhotonNetwork.CreateRoom(inputRoomName.text, roomOptions);
         //print(PhotonNetwork.CurrentRoom.Name);
     }
@@ -238,12 +238,12 @@ public class RoomListSetting : MonoBehaviourPunCallbacks
     //    PhotonNetwork.JoinRoom(inputRoomname);
     //}
 
-    //방 참가가 완료 되었을 때 호출 되는 함수ge
+    //방 참가가 완료 되었을 때 호출 되는 함수
     public override void OnJoinedRoom()
     {
         base.OnJoinedRoom();
         print("OnJoinedRoom");
-        if (PhotonNetwork.CurrentRoom.Name == "전체")
+        if (PhotonNetwork.CurrentRoom.Name == "Cafe")
         {
             PhotonNetwork.LoadLevel("LYJ_Cafe");
         }
