@@ -16,10 +16,24 @@ public class GameManager2 : MonoBehaviourPunCallbacks
         PhotonNetwork.SerializationRate = 60;
         //Rpc 호출 빈도
         PhotonNetwork.SendRate = 60;
-        
+
         //플레이어를 생성한다.
         //PhotonNetwork.Instantiate("Player", spawnPos[idx], Quaternion.identity);
-        PhotonNetwork.Instantiate("AntPlayer2", new Vector3(18, 10, 15), Quaternion.identity);
+        GameObject playerObject = PhotonNetwork.Instantiate("AntPlayer2", new Vector3(18, 10, 15), Quaternion.identity);
+
+        //수익률 10이상 -> 개미 크기 2배
+        playerObject.name = LoginManager.Instance.playerData.memberNickname;
+        double a = double.Parse(LoginManager.Instance.playerData.yield);
+
+        if (a > 10)
+        {
+            playerObject.transform.localScale = new Vector3(2, 2, 2);
+        }
+
+        else
+        {
+            playerObject.transform.localScale = new Vector3(1, 1, 1);
+        }
     }
 
     // Update is called once per frame
